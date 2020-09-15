@@ -1,0 +1,48 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/Auth
+//
+
+[view="auth"] {
+	$page: '.auth';
+
+	.partners {
+		@include display(flex, center, flex-end);
+
+		height: rem(28);
+		margin: 0 auto rem(40);
+
+		img {
+			@include display(block);
+			@include size(38);
+			flex: 0 0 rem(38);
+			border-radius: rem(38);
+			margin: 0 rem(2);
+			@include box-shadow($box-shadow);
+		} // -> img
+	} // -> partners
+
+	#{$page} {
+		&-title {
+			color: var(--orange);
+			font-size: rem(22);
+			line-height: rem(26);
+			text-align: center;
+			font-weight: bold;
+		} // -> title
+	} // -> $page
+
+	.button {
+		margin-top: rem(15);
+	}
+
+	.group {
+		input,
+		select {
+			height: rem(70);
+		}
+	} // -> group
+} // -> view[auth]

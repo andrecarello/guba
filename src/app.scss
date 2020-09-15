@@ -1,0 +1,20 @@
+/*
+ Author: Oston <ti@oston.io>
+ Name: Vue Base
+ Description: Code for Vue projects
+ File: app.scss
+ Location: /
+*/
+
+@import "./styles/core/settings",
+				"./styles/core/mixins";
+
+
+@import "./styles/layout/colors",
+				"./styles/layout/globals",
+				"./styles/layout/spacing",
+				"./styles/layout/buttons",
+				"./styles/layout/fonts",
+				"./styles/layout/text",
+				"./styles/layout/form";
+
