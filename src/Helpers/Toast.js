@@ -1,38 +1,42 @@
 export const Toast = (type, content, config) => {
-
-	console.log(type, content, config)
-
 	let base = {
 		html: false || config.html,
 		time: 5000 || config.time
-	}
+	};
+
 
 	const create = () => {
-		const element = document.createElement('DIV')
+		const element = document.createElement('DIV');
 
-		element.id = 'toast'
-		element.className = 'toast'
-		element.className = type
+		element.id = 'toast';
+		element.className = 'toast';
+		element.className = type;
 
-		if (base.html) element.innerHTML = content
-		else element.innerText = content
+		if (base.html) element.innerHTML = content;
+		else element.innerText = content;
 
-		return element
-	}
+		return element;
+	};
 
+	const remove = (el) => el.remove();
+
+
+	// setTimeout(() => container.classList.remove('active'), base.time - 200);
+	// setTimeout(() => remove(), base.time);
 
 	const init = () => {
-		const t = document.querySelector('#toast');
-		if (!t) {
-			document.querySelector('#app').appendChild(create())
+
+		if (!document.querySelector('#toast')) {
+			document.querySelector('#app').appendChild(create());
+
+			const container = document.querySelector('#toast');
+
+
+			setTimeout(() => container.classList.add('active'), 200);
+			setTimeout(() => container.classList.remove('active'), base.time - 400);
+			setTimeout(() => remove(container), base.time);
 		}
-	}
-	const remove = () => document.querySelector('#toast').remove()
+	};
 
-
-	init()
-	setTimeout(() => {
-		remove()
-	}, base.time)
-
-}
+	init();
+};

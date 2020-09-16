@@ -22,4 +22,16 @@
 	font-size: rem(17);
 	font-weight: bold;
 	@include font('Simplon');
+
+	transform: translateY(10px);
+	opacity: 0;
+	visibility: hidden;
+
+	transition: all .2s ease;
+
+	&.active {
+		transform: translateY(0px);
+		opacity: 1;
+		visibility: visible;
+	}
 }

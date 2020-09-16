@@ -76,7 +76,7 @@ export default {
 					this.$router.push({ name: 'Home' });
 				}, 1500);
 			} else {
-				toast('error', '', { time: 5000 });
+				toast('error', 'OPS, verifique se o código é o mesmo que foi enviado.', { time: 5000 });
 			}
 		},
 		changeMsisdn() {
