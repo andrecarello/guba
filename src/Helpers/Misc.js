@@ -68,22 +68,6 @@ export const validaCPF = (cpf) => {
 };
 
 /**
- *  Realiza a contagem de caracteres para limitar a exibicao do texto
- *
- * @param str
- * @param chars
- * @param ellipsis
- * @returns {string|*}
- */
-export const charCount = (str, chars, ellipsis = '...') => {
-	if (str.length > chars) {
-		return str.substring(0, chars) + ellipsis;
-	}
-
-	return str;
-};
-
-/**
  *
  * @param name
  * @param ext
@@ -181,6 +165,23 @@ export const isTestNumber = (msisdn) => {
 	};
 };
 
+/**
+ * Verifica se é url de test
+ * localhost || .test = return true
+ *
+ * @returns {boolean}
+ */
+export const isTestUrl = () => {
+	const url = document.location.href
+
+	return url.includes('.test') || url.includes('localhost') ? true : false
+}
+
+/**
+ * Cria uma hash com 40 caracteres
+ *
+ * @returns {String} | alphanumeric
+ */
 export const hash = () => {
 	let result = '';
 	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

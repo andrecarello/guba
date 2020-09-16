@@ -3,10 +3,10 @@ module.exports = {
     loaderOptions: {
       sass: {
 				prependData: `
-					@import "@/styles/core/_settings.scss";
-					@import "@/styles/core/_functions.scss";
-					@import "@/styles/core/_mixins.scss";
-					@import "@/styles/layout/_display.scss";
+					@import "@/assets/sass/core/_settings.scss";
+					@import "@/assets/sass/core/_functions.scss";
+					@import "@/assets/sass/core/_mixins.scss";
+					@import "@/assets/sass/layout/_display.scss";
 				`
       }
     }

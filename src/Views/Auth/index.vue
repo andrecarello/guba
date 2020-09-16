@@ -19,6 +19,7 @@
       <FormulateInput
         class="group"
         type="tel"
+				label="Número Oi"
         name="msisdn"
         placeholder="(ddd) + número Oi"
         v-model="form.msisdn"

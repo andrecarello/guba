@@ -11,6 +11,10 @@ class AuthController extends Controller {
 		return () => import(/* webpackChunkName: "auth" */ '@/Views/Auth/index.vue');
 	}
 
+	test(text) {
+		console.log(text)
+	}
+
 	setHash() {
 		this.dispatch('AuthModel/saveHash', hash());
 	}

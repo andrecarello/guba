@@ -6,15 +6,20 @@
  Location: /
 */
 
-@import "./styles/core/settings",
-				"./styles/core/mixins";
+@import "./assets/sass/core/settings",
+				"./assets/sass/core/mixins";
 
 
-@import "./styles/layout/colors",
-				"./styles/layout/globals",
-				"./styles/layout/spacing",
-				"./styles/layout/buttons",
-				"./styles/layout/fonts",
-				"./styles/layout/text",
-				"./styles/layout/form";
+@import "./assets/sass/layout/colors",
+				"./assets/sass/layout/globals",
+				"./assets/sass/layout/spacing",
+				"./assets/sass/layout/buttons",
+				"./assets/sass/layout/fonts",
+				"./assets/sass/layout/text",
+				"./assets/sass/layout/form";
+
+@import "./assets/sass/components/toast.scss";
+
+@import "./assets/sass/themes.default",
+				"./assets/sass/themes.dark";
 
