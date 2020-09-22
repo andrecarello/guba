@@ -16,5 +16,9 @@ export const Masks = {
 					.replace(/(\d{4})\d+?$/, '$1');
 
 		return __regEx;
-	}
+  },
+
+  unset: function (value) {
+    return value.replace(/\D/g, "")
+  }
 }

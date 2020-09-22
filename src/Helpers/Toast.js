@@ -1,4 +1,4 @@
-export const Toast = (type, content, config) => {
+export const Toast = (type, content, config = {}) => {
 	let base = {
 		html: false || config.html,
 		time: 5000 || config.time

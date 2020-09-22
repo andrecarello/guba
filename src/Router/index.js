@@ -24,7 +24,20 @@ const routes = [
 		meta: {
 			KeepAlive: false, // Need to be cached
 			requiresAuth: false
-		}
+    },
+    redirect: '/auth/msisdn',
+		children: [
+			{
+        name: 'AuthMsisdn',
+        path: 'msisdn',
+				component: AuthController.view('Msisdn')
+			},
+			{
+        name: 'AuthPin',
+				path: 'pin',
+				component: AuthController.view('Pin')
+      }
+		]
 	}
 ];
 

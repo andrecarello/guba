@@ -13,8 +13,6 @@
 	right: 0;
 	margin: 0 auto;
 
-
-	background-color: var(--red);
 	padding: rem(25) rem(20);
 
 	color: var(--white);
@@ -27,7 +25,15 @@
 	opacity: 0;
 	visibility: hidden;
 
-	transition: all .2s ease;
+  transition: all .2s ease;
+
+  &.error {
+    background-color: var(--red);
+  }
+
+  &.success {
+    background-color: var(--green);
+  }
 
 	&.active {
 		transform: translateY(0px);

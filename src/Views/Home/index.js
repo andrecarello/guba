@@ -12,7 +12,7 @@ export default {
 
 	},
 	mounted() {
-
+		_.controller('collection').getCollections()
 	},
 	computed: {
 

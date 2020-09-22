@@ -7,16 +7,19 @@ import { strOnlyNumber, hash } from '@/Helpers/Misc';
 import Controller from './Controller';
 
 class AuthController extends Controller {
-	static view() {
+	static view(file) {
+		if (!!file) {
+			return () => import(/* webpackChunkName: "auth" */ `@/Views/Auth/${file}/index.vue`)
+		}
 		return () => import(/* webpackChunkName: "auth" */ '@/Views/Auth/index.vue');
 	}
 
-	test(text) {
-		console.log(text)
+	setHash() {
+		this.dispatch('AuthModel/saveHash', hash())
 	}
 
-	setHash() {
-		this.dispatch('AuthModel/saveHash', hash());
+	setMsisdn(value) {
+		this.dispatch('AuthModel/saveMsisdn', value)
 	}
 
 	setPin(value) {

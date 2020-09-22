@@ -9,7 +9,6 @@ import Store from '@/Store';
 Vue.config.productionTip = false;
 // -> end: vue config
 
-
 // -> begin: set controllers
 import { _CONTROLLER } from '@/bootstrap';
 _.controller = _CONTROLLER;
@@ -22,13 +21,11 @@ files.keys().map((key) => {
 });
 // -> end: set controllers
 
-
 // -> begin: project exclusive imports
-import feather from 'vue-icon'
-import VueFormulate from '@braid/vue-formulate'
-import { pt } from '@braid/vue-formulate-i18n'
+import feather from 'vue-icon';
+import VueFormulate from '@braid/vue-formulate';
+import { pt } from '@braid/vue-formulate-i18n';
 // -> end: project exclusive imports
-
 
 // -> begin: styles
 // import './assets/scss/app.scss';
@@ -48,14 +45,14 @@ if (INTERACTIONS) {
 // import './mock';
 
 // -> begin: uses
-Vue.use(feather, 'v-icon')
-Vue.use(VueFormulate,  {
-  plugins: [ pt ]
-})
+Vue.use(feather, 'v-icon');
+Vue.use(VueFormulate, {
+	plugins: [ pt ]
+});
 // -> end: uses
 
 new Vue({
 	router: Router,
 	store: Store,
-	render: (h) => h(App)
+  render: (h) => h(App)
 }).$mount('#app');
