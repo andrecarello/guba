@@ -1,0 +1,62 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: colors.scss
+// Location: @/styles/colors
+//
+
+a,
+button {
+	&[class^="button"] {
+		@include display(flex, center, center);
+		border-radius: rem(7);
+		position: relative;
+		height: rem(50);
+		width: 100%;
+		max-width: rem(253);
+		margin: 0 auto;
+		border: rem(1) solid transparent;
+
+		color: var(--white);
+		font-size: rem(16);
+		font-weight: 400;
+		line-height: 1;
+
+		cursor: pointer;
+
+		@include font('Simplon');
+
+		transition: all .2s ease;
+
+		svg {
+			height: rem(18);
+			width: rem(18);
+			margin: {
+				right: rem(5);
+			}
+		}
+
+		&.disabled {
+			opacity: 0.5;
+			touch-action: none;
+			pointer-events: none;
+			cursor: wait;
+		}
+	}
+}
+
+.button {
+	@each $name, $color in $colors {
+		&\:#{$name} {
+			background-color: $color;
+			border-color: $color;
+
+			&\:outline {
+				background-color: transparent;
+				border-color: #{$color} !important;
+				color: #{$color} !important;
+			}
+		}
+	}
+}

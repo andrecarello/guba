@@ -1,0 +1,108 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: settings.scss
+// Location: @/styles/core/
+//
+
+// define [ language ]
+$lang: 'en';
+
+// define [ locations ]
+$fonts_location: '/assets/fonts/';
+$images_location: '/assets/images/';
+$backgrounds_location: '#{$images_location}backgrounds/';
+
+// define [ browser options ]
+$browser-context: 16;
+$box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.16);
+
+// define [ suffix and preffix ]
+$prefix: '';
+$suffix: '';
+
+// define [ spaces ]
+$gutter: 20px;
+$margin: 20px;
+
+// define [ breapoints ]
+$breakpoints: (sm : 576px, md : 768px, lg : 992px, xl : 1200px) !default;
+
+// define [ animations and timing ]
+$ease: ease;
+$timing: .25s;
+
+// define [ colors ]
+$white: #ffffff;
+$green: #00d318;
+$light-green: #d9f8dc;
+$yellow: #ffff02;
+$blue: #00ceff;
+$grey: #9c9c9c;
+$dark-grey: #4d4d4d;
+$red: #e63c5e;
+$orange: #ff6d00;
+$light-orange: #ffe9d9;
+$purple: #ea288c;
+
+// cria o array de fonts separados por espaco
+// ex: "Proxima Nova" ProximaNova-Regular 400,
+$fonts: (
+	"Simplon Headline" simplonoi-headline 400,
+	"Simplon" simplonbp-light-webfont 300,
+	"Simplon" simplonbp-regular-webfont 400,
+	"Simplon" simplonbp-medium-webfont 500,
+	"Simplon" simplonbp-bold-webfont 600
+);
+
+// create [ WEBFONTS ]
+$open_sans: "Open Sans";
+
+// list of colors
+$colors: (
+	'white' $white,
+	'green' $green,
+	'light-green' $light-green,
+	'yellow' $yellow,
+	'blue' $blue,
+	'grey' $grey,
+	'dark-grey' $dark-grey,
+	'red' $red,
+	'orange' $orange,
+	'light-orange' $light-orange,
+	'purple' $purple
+);
+
+$sizes: (
+	'xxxs' 9,
+	'xxs' 10,
+	'xs' 12,
+	'md' 15,
+	'lg' 20,
+	'xl' 26
+);
+
+$weights: (
+	'100' 100,
+	'200' 200,
+	'300' 300,
+	'400' 400,
+	'500' 500,
+	'600' 600,
+	'700' 600,
+	'800' 800,
+	'900' 900
+);
+
+
+$gutter_steps: 5;
+$gutter_loop: 15;
+$gutter_directions: ('top', 'left', 'right', 'bottom');
+
+$circle_steps: 5;
+$circle_loop: 20;
+
+// -> display
+$display_justify-content: (flex-start fs, flex-end fe, center c);
+$display_align-items:     (flex-start fs, flex-end fe, center c, stretch s);
