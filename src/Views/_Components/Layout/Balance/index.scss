@@ -1,0 +1,22 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/_components/layout/balance
+//
+
+.balance {
+  font-size: rem(15);
+  font-weight: 300;
+  color: var(--dark-grey);
+
+  @include display(flex, flex-start, center);
+
+  strong {
+    color: var(--orange);
+    font-size: rem(24);
+    @include font('Simplon Headline');
+    margin-left: rem(3);
+  }
+}

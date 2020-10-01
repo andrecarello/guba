@@ -1,7 +1,6 @@
 // @ is an alias to /src
 
 // -> import core
-import { mapGetters } from 'vuex';
 import Settings from '@/config/Settings';
 
 // -> import components
@@ -33,25 +32,28 @@ export default {
 		Settings.title('Login');
 	},
 	components: {
-		btn: LayoutButton,
+		btn: LayoutButton
 	},
 	methods: {
 		submitMsisdn() {
-      const msisdn = Masks.unset(this.form.msisdn)
+			const msisdn = Masks.unset(this.form.msisdn);
 
-      this.loading = !this.loading
+			this.loading = !this.loading;
 
-      if (isTestNumber(msisdn).status) {
-        setTimeout(() => {
-          _.controller('auth').setMsisdn(msisdn)
-          this.loading = !this.loading
-          toast('success', 'Seu código de acesso é 1808')
+			if (isTestNumber(msisdn).status) {
+				setTimeout(() => {
+					_.controller('auth').setMsisdn(msisdn);
+					this.loading = !this.loading;
+					toast('success', 'Seu código de acesso é 1808');
 
-          this.$router.push('pin')
-        }, 2000)
-      } else {
-        toast('error', 'OPS, verifique se o código é o mesmo que foi enviado.');
-      }
-		},
+					this.$router.push('pin');
+				}, 2000);
+			} else {
+				setTimeout(() => {
+					this.loading = !this.loading;
+					toast('error', 'OPS. Você não possui acesso a esta plataforma.');
+				}, 2000);
+			}
+		}
 	}
 };

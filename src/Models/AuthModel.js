@@ -1,7 +1,8 @@
 export const defaultState = {
 	pin: '',
 	hash: '',
-	msisdn: ''
+	msisdn: '',
+	balance: ''
 };
 
 export default {
@@ -12,7 +13,8 @@ export default {
 	getters: {
 		msisdn: (state) => state.msisdn,
 		pin: (state) => state.pin,
-		hash: (state) => state.hash
+		hash: (state) => state.hash,
+		balance: (state) => state.balance
 	},
 
 	actions: {
@@ -27,6 +29,9 @@ export default {
 		},
 		saveHash({ commit }, value) {
 			commit('setHash', value);
+		},
+		saveBalance({ commit }, value) {
+			commit('setBalance', value);
 		}
 	},
 
@@ -44,6 +49,9 @@ export default {
 		},
 		setHash(state, value) {
 			state.hash = value;
+		},
+		setBalance(state, value) {
+			state.balance = value;
 		}
 	}
 };

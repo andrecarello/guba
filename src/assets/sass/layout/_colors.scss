@@ -17,3 +17,9 @@
 		color: #{$color}!important;
 	}
 }
+
+@each $name, $color in $colors {
+	.border\:#{$name} {
+		border-color: #{$color}!important;
+	}
+}

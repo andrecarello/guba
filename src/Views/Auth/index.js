@@ -1,8 +1,10 @@
 // @ is an alias to /src
 
 // -> import core
-import { mapGetters } from 'vuex';
 import Settings from '@/config/Settings';
+
+// -> import helpers
+import LoadImage from '@/Views/_Components/Helpers/Image/index.vue';
 
 // -> import components
 import LayoutContainer from '@/Views/_Components/Layout/Container/index.vue';
@@ -12,15 +14,39 @@ export default {
 	name: 'Auth',
 	mounted() {
 		Settings.title('Login');
-
-		if (!!this.pin) {
-			this.msisdnForm = !this.msisdnForm;
-			this.pinForm = !this.pinForm;
-		}
-	},
+  },
+  data() {
+    return {
+      partners: [
+        {
+          text: 'Marisa',
+          icon: 'marisa'
+        },
+        {
+          text: 'BK',
+          icon: 'burger-king'
+        },
+        {
+          text: 'Tok&amp;Stock',
+          icon: 'tok-e-stock'
+        },
+        {
+          text: 'Compra Certa',
+          icon: 'compra-certa'
+        },
+        {
+          text: 'Netshoes',
+          icon: 'netshoes'
+        }
+      ]
+    }
+  },
 	components: {
+    // -> layout
 		container: LayoutContainer,
+		HeadersAuth,
 
-		HeadersAuth
+		// -> helpers
+		loadImage: LoadImage
 	}
 };

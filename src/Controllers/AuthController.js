@@ -9,21 +9,25 @@ import Controller from './Controller';
 class AuthController extends Controller {
 	static view(file) {
 		if (!!file) {
-			return () => import(/* webpackChunkName: "auth" */ `@/Views/Auth/${file}/index.vue`)
+			return () => import(/* webpackChunkName: "auth" */ `@/Views/Auth/${file}/index.vue`);
 		}
 		return () => import(/* webpackChunkName: "auth" */ '@/Views/Auth/index.vue');
 	}
 
 	setHash() {
-		this.dispatch('AuthModel/saveHash', hash())
+		this.dispatch('AuthModel/saveHash', hash());
 	}
 
 	setMsisdn(value) {
-		this.dispatch('AuthModel/saveMsisdn', value)
+		this.dispatch('AuthModel/saveMsisdn', value);
 	}
 
 	setPin(value) {
-		this.dispatch('AuthModel/savePin', value)
+		this.dispatch('AuthModel/savePin', value);
+	}
+
+	setBalance(value) {
+		this.dispatch('AuthModel/saveBalance', value);
 	}
 
 	requestPin(msisdn, callback, errorCallback) {

@@ -1,0 +1,91 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/Auth
+//
+
+.navbar {
+  height: rem(99);
+  background-color: var(--white);
+
+  @include display(flex, space-between, center);
+
+  padding: {
+    left: rem(25);
+    right: rem(18);
+  }
+
+  .brand {
+    @include display(flex, flex-start, center);
+
+    span {
+      margin-left: rem(12);
+      color: var(--orange);
+
+      @include font('Simplon HeadLine');
+      font: {
+        size: rem(16)
+      }
+    } // -> span
+  } // -> brand
+
+  .link {
+
+  }
+
+  .togglr {
+    @include display(flex, space-between, center);
+    flex-direction: column;
+    @include size(21, 50);
+    margin-left: auto;
+
+    span {
+      @include display(block);
+      @include size(3, 35);
+      background-color: var(--orange);
+    }
+  } // -> togglr
+
+  .inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    background-color: var(--light-orange);
+
+    height: 100vh;
+    padding-top: rem(35);
+
+    transition: all .2s ease;
+
+    header {
+      padding: {
+        left: rem(39);
+        right: rem(40);
+      }
+    } // -> header
+
+    .togglr {
+      transform: rotate(90deg);
+      margin-top: rem(-40);
+    } // -> togglr
+  } // -> inner
+
+  &.active {
+
+    .inner {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+    }
+
+  } // -> active
+} // -> navbar

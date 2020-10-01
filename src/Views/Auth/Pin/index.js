@@ -45,11 +45,16 @@ export default {
 				setTimeout(() => {
 					this.loading = !this.loading;
 					_.controller('Auth').setHash();
+					_.controller('Auth').setPin(pin);
+					_.controller('Auth').setBalance('1,99');
 
 					this.$router.push({ name: 'Home' });
 				}, 2000);
 			} else {
-				toast('error', 'OPS, verifique se o código é o mesmo que foi enviado.');
+				setTimeout(() => {
+					this.loading = !this.loading;
+					toast('error', 'OPS, verifique se o código é o mesmo que foi enviado.');
+				}, 2000);
 			}
 		}
 	},

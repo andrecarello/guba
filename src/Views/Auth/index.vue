@@ -3,15 +3,15 @@
     <HeadersAuth />
 
     <div class="partners">
-      <img src="@/assets/images/simbolo-marisa.svg" alt="Marisa" />
-      <img src="@/assets/images/burger-king.svg" alt="BK" />
-      <img src="@/assets/images/tok-e-stock.svg" alt="Tok&amp;Stock" />
-      <img src="@/assets/images/compra-certa.svg" alt="Compra Certa" />
-      <img src="@/assets/images/netshoes.svg" alt="Netshoes" />
+      <loadImage
+        v-for="(partner, index) in partners"
+        :key="index"
+        :source="`${partner.icon}.svg`"
+        :alt="partner.text"
+      />
     </div>
 
-		<router-view></router-view>
-
+    <router-view></router-view>
   </container>
 </template>
 

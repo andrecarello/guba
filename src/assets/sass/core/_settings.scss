@@ -99,3 +99,10 @@ $weights: (
 $gutter_steps: 5;
 $gutter_loop: 15;
 $gutter_directions: ('top', 'left', 'right', 'bottom');
+
+$circle_steps: 5;
+$circle_loop: 20;
+
+// -> display
+$display_justify-content: (flex-start fs, flex-end fe, center c);
+$display_align-items:     (flex-start fs, flex-end fe, center c, stretch s);
