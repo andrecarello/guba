@@ -1,0 +1,132 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/notifications
+//
+
+.notifications {
+
+  h4 {
+    font-weight: bold;
+    color: var(--black);
+    font-size: rem(24);
+  }
+
+	a {
+		position: relative;
+		@include size(24);
+		@include display(block);
+
+		svg {
+			@include change-svg-color(#c6c6c6);
+		}
+
+		.badge {
+			position: absolute;
+			@include display(flex, center, center);
+			@include circle(21);
+			top: 50%;
+			left: -50%;
+
+			background-color: var(--orange);
+			color: var(--white);
+			font-size: rem(10);
+			font-weight: bold;
+		} // -> badge
+  } // -> a
+
+  .backdrop {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, .16)
+  }
+
+	.inner {
+		position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 51;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+
+		width: 90vw;
+		max-width: rem(560);
+		background-color: var(--white);
+		box-shadow: rem(10) rem(10) rem(10) rgba(0, 0, 0, .16);
+    border-radius: rem(8);
+    border: rem(1) solid var(--grey);
+
+    padding: rem(25) rem(30);
+
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease;
+
+    ul {
+      max-width: rem(240);
+      width: 100%;
+
+      li {
+        color: var(--black);
+        font-weight: 400;
+        margin-top: rem(30);
+        position: relative;
+
+        &.not-read {
+          font-weight: bold;
+
+          &:after{
+            content: '';
+            position: absolute;
+            left: calc(100% + 10px);
+            @include circle(10);
+            background-color: var(--orange);
+          }
+        } // not-read
+      } // -> li
+    } // -> ul
+  } // -> inner
+
+  .close {
+    position: absolute;
+    top: rem(15);
+    right: rem(30);
+    cursor: pointer;
+    @include size(20);
+
+    &:after, &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      @include size(2, 20);
+      background-color: var(--orange);
+    }
+
+    &:after{
+      transform: translateY(-50%) rotate(45deg)
+    }
+    &:before{
+      transform: translateY(-50%) rotate(-45deg)
+    }
+  } // -> close
+
+	&.active {
+    .inner {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    } // -> inner
+	} // -> active
+} // -> notifications

@@ -1,5 +1,5 @@
 <template>
-  <div class="msisdn">{{ msisdn }}</div>
+  <div class="msisdn">{{ formated(msisdn) }}</div>
 </template>
 
 <script src="./index.js"></script>

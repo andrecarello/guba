@@ -42,11 +42,12 @@ export default {
 
 			if (isTestNumber(msisdn).status) {
 				setTimeout(() => {
-					_.controller('auth').setMsisdn(msisdn);
-					this.loading = !this.loading;
-					toast('success', 'Seu código de acesso é 1808');
+          _.controller('auth').setMsisdn(msisdn);
 
-					this.$router.push('pin');
+          this.$router.push('pin');
+          this.loading = !this.loading;
+
+          toast('success', 'Seu código de acesso é 1808');
 				}, 2000);
 			} else {
 				setTimeout(() => {

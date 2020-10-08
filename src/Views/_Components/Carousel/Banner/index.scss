@@ -1,0 +1,79 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/carousel.banner
+//
+
+.banner {
+	$prefix: '.slick-';
+
+	&\:home {
+		#{$prefix} {
+			&list {
+				.item {
+					padding: {
+						left: rem(5);
+						right: rem(5);
+					}
+
+					img {
+						@include display(block);
+						width: 100%;
+						border-radius: rem(8);
+					}
+				}
+			}
+
+			&dots {
+				@include display(flex!important, center, center);
+				@include size(7, 69);
+				margin: 0 auto;
+				position: relative;
+
+				li {
+					width: 100%;
+					@include display(flex!important, center, center);
+					margin: 0;
+					padding: 0;
+
+					button {
+						@include size(7);
+						border-radius: rem(7);
+						background-color: rgba(0, 0, 0, 0.1);
+						margin: 0 auto;
+						padding: 0;
+						transition: all .1s ease;
+
+						&::before {
+							display: none;
+						}
+					}
+
+					&#{$prefix} {
+						&active {
+							button {
+								@include size(7, 15);
+								background-color: var(--orange);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.slide {
+			border-radius: rem(8);
+			overflow: hidden;
+
+			max-width: rem(378);
+			margin: 0 auto;
+
+			img {
+				@include display(block);
+				width: 100%;
+			}
+		}
+	} // -> :home
+} // -> banner

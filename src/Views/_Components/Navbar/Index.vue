@@ -5,16 +5,17 @@
       <span>VANTAGENS</span>
     </div>
 
+    <Notifications />
     <a href="/" class="togglr" @click.prevent.stop="isOpenMenu = !isOpenMenu">
       <span v-for="i in 3" :key="i" />
     </a>
 
     <div class="inner">
-      <header class="flex:fs:c">
-        <div class="flex:c:c circle:80 border:2 border:orange mr:30">
+      <header>
+        <div class="brand mr:20">
           <OiIcon :width="39" :height="42" />
         </div>
-        <div class="flex:c:fs fd:c">
+        <div class="center">
           <Msisdn />
           <Balance />
         </div>
@@ -29,9 +30,9 @@
 
       <section>
         <router-link v-for="(item, index) in items" :key="index" :to="item.url">
-          <loadImage :source="`icons/${item.icon}.svg`" :alt="item.text" />
-          {{ item.text }}</router-link
-        >
+          <loadImage :container="true" :source="`icons/${item.icon}.svg`" :alt="item.text" />
+          <span>{{ item.text }}</span>
+        </router-link>
       </section>
     </div>
   </nav>

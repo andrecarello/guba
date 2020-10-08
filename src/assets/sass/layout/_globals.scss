@@ -65,7 +65,15 @@ body {
 
 	* {
 		-webkit-overflow-scrolling: touch !important;
-	}
+  }
+
+  #app {
+    max-width: rem(560);
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
 
 	button {
 		background-color: transparent;

@@ -9,6 +9,7 @@
 .navbar {
   height: rem(99);
   background-color: var(--white);
+  position: relative;
 
   @include display(flex, space-between, center);
 
@@ -19,6 +20,7 @@
 
   .brand {
     @include display(flex, flex-start, center);
+    margin-right: auto;
 
     span {
       margin-left: rem(12);
@@ -39,7 +41,7 @@
     @include display(flex, space-between, center);
     flex-direction: column;
     @include size(21, 50);
-    margin-left: auto;
+    margin-left: rem(15);
 
     span {
       @include display(block);
@@ -55,6 +57,11 @@
     right: 0;
     z-index: 500;
 
+    max-width: rem(560);
+    margin: 0 auto;
+    @include display(flex);
+    flex-direction: column;
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -67,11 +74,79 @@
     transition: all .2s ease;
 
     header {
+      width: 100%;
+      @include display(flex, flex-start, center);
       padding: {
         left: rem(39);
-        right: rem(40);
+        right: rem(20);
       }
+
+      .brand {
+        @include display(flex, center, center);
+        @include circle(80);
+        flex: 0 0 rem(80);
+        border: rem(2) solid var(--orange);
+      } // -> brand
+
+      .center {
+        width: 100%;
+      } // -> center
     } // -> header
+
+    section {
+      @include display(flex);
+      flex-direction: column;
+      @include grow(true);
+      width: 100%;
+      max-height: rem(492);
+      padding: {
+        top: rem(46);
+        left: rem(35);
+      }
+      position: relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: rem(46);
+        right: 0;
+        bottom: 0;
+
+        width: rem(50);
+        background-color: var(--orange);
+        border-radius: rem(24) 0 0 rem(24);
+      }
+
+      a {
+        height: rem(67);
+        @include display(flex, flex-start, center);
+        padding: {
+          left: rem(10);
+        }
+
+        figure {
+          @include size(67);
+          @include display(flex, center, center);
+        }
+
+        span {
+          color: var(--orange);
+          font-size: rem(18);
+          font-weight: 300;
+
+          display: block;
+          margin: {
+            left: rem(34);
+          }
+        } // -> span
+
+        &:last-child {
+          margin: {
+            top: auto;
+          }
+        }
+      } // -> a
+    } // -> section
 
     .togglr {
       transform: rotate(90deg);

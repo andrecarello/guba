@@ -147,18 +147,21 @@ export const years = (min = 1920, max = 1999) => {
  * @returns {boolean}
  */
 export const isTestNumber = (msisdn) => {
-	for (let i = 1; i <= 3; i++) {
+	for (let i = 1; i <= 4; i++) {
 		const regex = new RegExp('^[1-9]{2}[' + i + ']{9}$', 'gm');
 
 		msisdn = strOnlyNumber(msisdn);
 
 		if (!!regex.exec(msisdn)) {
+      _.controller('auth').setCluster(i)
 			return {
 				status: true,
 				cluster: i
 			};
 		}
-	}
+  }
+
+  _.controller('auth').setCluster(1)
 	return {
 		status: false,
 		cluster: 1

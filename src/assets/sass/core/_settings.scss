@@ -35,6 +35,7 @@ $timing: .25s;
 
 // define [ colors ]
 $white: #ffffff;
+$black: #000000;
 $green: #00d318;
 $light-green: #d9f8dc;
 $yellow: #ffff02;
@@ -61,7 +62,8 @@ $open_sans: "Open Sans";
 
 // list of colors
 $colors: (
-	'white' $white,
+  'white' $white,
+  'black' $black,
 	'green' $green,
 	'light-green' $light-green,
 	'yellow' $yellow,

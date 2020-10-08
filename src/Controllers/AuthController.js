@@ -20,7 +20,11 @@ class AuthController extends Controller {
 
 	setMsisdn(value) {
 		this.dispatch('AuthModel/saveMsisdn', value);
-	}
+  }
+
+  setCluster(value) {
+    this.dispatch('AuthModel/saveCluster', value);
+  }
 
 	setPin(value) {
 		this.dispatch('AuthModel/savePin', value);
