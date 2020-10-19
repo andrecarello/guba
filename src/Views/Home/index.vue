@@ -4,10 +4,13 @@
     <search />
     <banner />
 
-    <div v-if="loading">CARREGANDO...</div>
-    <div v-else v-for="(collection, index) in collections" :key="index">
-      {{ collection }}
-    </div>
+    <div v-if="loading"><SkeletonCollections v-for="i in 2" :key="i" /></div>
+    <Collections
+      v-else
+      v-for="(collection, index) in collections"
+      :content="collection"
+      :key="index"
+    />
   </container>
 </template>
 <script src="./index.js"></script>

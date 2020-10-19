@@ -13,7 +13,7 @@ const routes = [
 		name: 'Home',
 		component: HomeController.view(),
 		meta: {
-			KeepAlive: false, // Need to be cached
+			KeepAlive: true, // Need to be cached
 			requiresAuth: true
 		}
 	},

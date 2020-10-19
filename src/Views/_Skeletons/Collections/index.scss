@@ -1,0 +1,64 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_skeletons/collections
+//
+[skeleton="collections"] {
+
+  $radius: rem(4);
+  $bg: #eee;
+
+  .items{
+    @include display(flex);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    padding: {
+      left: rem(18);
+      bottom: rem(10);
+    }
+  }
+
+  .item {
+    @include size(335, 170);
+    flex: 0 0 rem(170);
+    @include box-shadow($box-shadow);
+    margin: {
+      right: rem(20);
+    }
+    border-radius: $radius;
+
+    div {
+      background-color: $bg;
+      border-radius: $radius;
+
+      &:nth-child(1) {
+        height: rem(225);
+      }
+      &:nth-child(2) {
+        margin-top: rem(32);
+        @include size(20, 100);
+      }
+      &:nth-child(3) {
+        margin-top: rem(9);
+        @include size(14, 40);
+      }
+      &:nth-child(4) {
+        margin-top: rem(9);
+        @include size(26, 74);
+      }
+    }
+  }
+
+  > .title {
+    @include size(29, 229);
+    background-color: $bg;
+    margin: {
+      left: rem(18);
+      bottom: rem(37);
+    }
+    border-radius: $radius;
+  }
+}

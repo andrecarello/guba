@@ -16,10 +16,5 @@ export default {
 			required: true,
 			default: () => console.log('The image alt is required')
 		}
-	},
-	methods: {
-		checkSource(source) {
-			return source.includes('http:') || source.includes('https:') ? source : '@/' + source;
-		}
 	}
 };

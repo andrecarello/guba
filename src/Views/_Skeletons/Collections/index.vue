@@ -1,0 +1,13 @@
+<template>
+  <div skeleton="collections">
+    <div class="title" />
+    <div class="items">
+      <div class="item" v-for="i in 5" :key="i">
+        <div v-for="i in 4" :key="i"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script src="./index.js"></script>
+<style lang="scss" scoped src="./index.scss"></style>

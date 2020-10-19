@@ -61,7 +61,8 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 
-	@include font("Simplon");
+  @include font("Simplon");
+  @include scrollbar('vertical', $orange, darken($orange, 15%), darken($light-orange, 15%), tomato);
 
 	* {
 		-webkit-overflow-scrolling: touch !important;
@@ -79,4 +80,18 @@ body {
 		background-color: transparent;
 		border: none;
 	}
+}
+
+
+// -> animations
+@-webkit-keyframes dots-jump {
+  0% {bottom: 0;}
+  40% {bottom: 6px;}
+  80% {bottom: 0;}
+}
+
+@keyframes dots-jump {
+  0% {bottom: 0;}
+  40% {bottom: 6px;}
+  80% {bottom: 0;}
 }

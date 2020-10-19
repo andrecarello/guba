@@ -181,14 +181,20 @@
 @mixin skew($x: 0, $y: 0) {
   @include transform(skew(#{$x}deg, #{$y}deg));
 }
-@mixin scrollbar($thumb, $thumb-hover, $track, $button) {
+@mixin scrollbar($direction, $thumb, $thumb-hover, $track, $button) {
   &::-webkit-scrollbar {
-    width: 3px;
+    @if $direction = "horizontal" {
+      height: rem(3);
+    }
+
+    @if $direction = "vertical" {
+      width: rem(5);
+    }
 
     &-button {
       display: block;
       height: 0;
-      width: rem(8);
+      width: 0;
       border-radius: 0;
       background-color: $button;
 
