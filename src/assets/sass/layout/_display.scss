@@ -11,7 +11,7 @@
 
 	display: $type;
 
-	@if $type = 'flex' {
+	@if index($type, 'flex') {
 		justify-content: $horizontal;
 		align-items: $vertical;
 	}

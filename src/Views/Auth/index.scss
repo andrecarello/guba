@@ -6,42 +6,51 @@
 // Location: @/views/Auth
 //
 
-[view="auth"] {
-	$page: '.auth';
+.auth {
+  min-height: 100vh;
+  border-right: rem(16) solid var(--white);
+  background-color: var(--light-orange);
+  padding: {
+    bottom: rem(50);
+  }
 
-	.partners {
-		@include display(flex, center, flex-end);
+  &\:partners {
+    @include display(flex, center, flex-end);
 
 		height: rem(28);
-		margin: 0 auto rem(40);
+    margin: 0 auto rem(40);
 
-		img {
-			@include display(block);
+    img {
+      @include display(block);
 			@include circle(38);
 			flex: 0 0 rem(38);
-			margin: 0 rem(2);
-			@include box-shadow($box-shadow);
+			margin: 0 rem(3);
+			border: rem(1) solid var(--orange);
 		} // -> img
-	} // -> partners
+  } // -> partners
 
-	#{$page} {
-		&-title {
-			color: var(--orange);
-			font-size: rem(22);
-			line-height: rem(26);
-			text-align: center;
-			font-weight: bold;
-		} // -> title
-	} // -> $page
+  &\:title {
+    color: var(--orange);
+    font-size: rem(22);
+    line-height: rem(30);
+    font-weight: bold;
+    @include font('Simplon Headline');
 
-	.button {
-		margin-top: rem(15);
-	}
+    width: rem(320);
+    margin: 0 auto rem(64);
+    position: relative;
+    padding: {
+      left: rem(10)
+    }
 
-	.group {
-		input,
-		select {
-			height: rem(70);
-		}
-	} // -> group
-} // -> view[auth]
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 22px);
+      left: rem(10);
+
+      @include size(3, 32);
+      background-color: var(--orange);
+    }
+  } // -> title
+} // -> auth

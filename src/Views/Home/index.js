@@ -10,6 +10,7 @@ import Navbar from '@/Views/_Components/Navbar/index.vue';
 import Search from '@/Views/_Components/Layout/Search/index.vue';
 import CarouselBanner from '@/Views/_Components/Carousel/Banner/index.vue'
 import Collections from '@/Views/_Components/Collections/index.vue';
+import CategoryTabs from '@/Views/_Components/Layout/CategoryTabs/index.vue'
 
 // -> import skeleton
 import SkeletonCollections from '@/Views/_Skeletons/Collections/index.vue'
@@ -22,6 +23,7 @@ export default {
     search: Search,
     banner: CarouselBanner,
     Collections,
+    CategoryTabs,
 
     // -> skeleton
     SkeletonCollections
@@ -29,7 +31,7 @@ export default {
 	mounted() {
 		Settings.title('Home');
 
-		_.controller('collection').getCollections();
+    _.controller('collection').getCollections();
 	},
   computed: {
     ...mapGetters('CollectionModel', ['collections']),

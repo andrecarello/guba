@@ -8,6 +8,17 @@ export const strOnlyNumber = (string) => {
 	return string.replace(/[^\d]+/g, '');
 };
 
+export const slugify = (text) => {
+	return text
+		.toString()
+		.toLowerCase()
+		.normalize('NFD')
+		.trim()
+		.replace(/\s+/g, '-')
+		.replace(/[^\w\-]+/g, '')
+		.replace(/\-\-+/g, '-');
+};
+
 /**
  * Array com range de números setados
  *
@@ -153,15 +164,15 @@ export const isTestNumber = (msisdn) => {
 		msisdn = strOnlyNumber(msisdn);
 
 		if (!!regex.exec(msisdn)) {
-      _.controller('auth').setCluster(i)
+			_.controller('auth').setCluster(i);
 			return {
 				status: true,
 				cluster: i
 			};
 		}
-  }
+	}
 
-  _.controller('auth').setCluster(1)
+	_.controller('auth').setCluster(1);
 	return {
 		status: false,
 		cluster: 1
@@ -175,10 +186,10 @@ export const isTestNumber = (msisdn) => {
  * @returns {boolean}
  */
 export const isTestUrl = () => {
-	const url = document.location.href
+	const url = document.location.href;
 
-	return url.includes('.test') || url.includes('localhost') ? true : false
-}
+	return url.includes('.test') || url.includes('localhost') ? true : false;
+};
 
 /**
  * Cria uma hash com 40 caracteres

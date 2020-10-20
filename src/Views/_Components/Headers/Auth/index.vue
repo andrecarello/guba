@@ -1,8 +1,8 @@
 <template>
-  <div class="header-auth">
-    <div class="header-auth__content">
-      <OiIcon :width="43" :height="45" />
-      <h1 class="heading">
+  <div class="auth:header">
+    <div class="auth:header__content">
+      <OiIcon :width="52" :height="56" />
+      <h1 class="auth:heading">
         <small>{{ subtitle }}</small>
         {{ title }}
       </h1>

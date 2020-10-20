@@ -10,7 +10,7 @@
 	$prefix: '.slick-';
 
 	&\:home {
-    margin-bottom: rem(83);
+		margin-bottom: rem(83);
 
 		#{$prefix} {
 			&list {
@@ -33,7 +33,7 @@
 				height: rem(7);
 				margin: 0 auto;
 				position: absolute;
-        top: calc(100% + 34px);
+				top: calc(100% + 34px);
 
 				li {
 					width: rem(23);

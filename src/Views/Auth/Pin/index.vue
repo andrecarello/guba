@@ -1,11 +1,9 @@
 <template>
   <FormulateForm @submit="submitPin">
-    <h1 class="auth-title mb:55">
-      Aproveite seus
-      <br />descontos exclusivos.
-    </h1>
+
     <FormulateInput
-      class="group"
+      class="form:group"
+      element-class="form:control"
       type="tel"
       name="pin"
       placeholder="* * * *"
@@ -25,20 +23,20 @@
     />
 
     <btn
-      type="submit"
-      class="button:orange text:yellow mt:15"
-      :class="this.loading ? 'disabled' :''"
-      :text="this.loading ? 'AGUARDE...' : 'CONTINUAR'"
+     type="submit"
+      class="button:orange text:yellow mt:15 form:button"
+      :class="this.loading ? 'form:button:disabled' :''"
+      text="CONTINUAR"
       :state="this.loading"
     />
 
-    <a href="/auth" @click.prevent.stop="resendPin()" class="button:orange:outline font:xs mt:15">
+    <a href="/auth" @click.prevent.stop="resendPin()" class="form:link">
       <v-icon name="refresh-cw" width="15px" height="15px" class="mr:5"></v-icon>
       <strong class="font:900 mr:5">Não recebeu?</strong> Enviar novo código
     </a>
     <router-link
-      to="/auth"
-      class="button:orange:outline font:xs mt:15"
+      to="/auth/msisdn"
+      class="form:link"
     >Trocar número</router-link>
   </FormulateForm>
 </template>

@@ -10,6 +10,8 @@ export const TEST_EMAIL = '';
 export const TEST_PASSWORD = '';
 export const CLIENT_EMAIL_SUPPORT = '';
 
+export const PROTOCOL = document.location.protocol;
+
 export const CLUSTERS = {
 	pre: 1,
 	recarga: 2,
@@ -24,7 +26,7 @@ export default {
 	},
 
 	ga: (text) => {
-		console.log(text)
+		console.log(text);
 	},
 
 	anonymous: () => {

@@ -1,14 +1,11 @@
 <template>
   <FormulateForm @submit="submitMsisdn">
-    <h1 class="auth-title mb:55">
-      Migre para Oi Controle e tenha
-      <br />acesso a descontos exclusivos.
-    </h1>
 
     <FormulateInput
-      class="group"
+      class="form:group"
+      element-class="form:control"
       type="tel"
-      label="(ddd) + número Oi"
+      placeholder="(ddd) + número Oi"
       name="msisdn"
       v-model="form.msisdn"
       validation="bail|required|msisdn|min:15|max:15"
@@ -26,8 +23,8 @@
 
     <btn
       type="submit"
-      class="button:orange text:yellow mt:15"
-      :class="this.loading ? 'disabled' :''"
+      class="button:orange text:yellow mt:15 form:button"
+      :class="this.loading ? 'form:button:disabled' :''"
       text="CONTINUAR"
       :state="this.loading"
     />

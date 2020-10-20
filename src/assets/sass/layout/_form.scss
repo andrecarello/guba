@@ -6,65 +6,101 @@
 // Location: @/styles/layout
 //
 
-.group {
-	position: relative;
-	border-radius: rem(4);
-	height: rem(72);
-	width: rem(264);
-	margin: rem(15) auto 0;
+.form {
 
-	background-color: var(--white);
-	border: rem(1) solid var(--grey);
+  &\:group {
+    min-height: rem(72);
+    max-width: rem(500);
+    width: 85vw;
+    position: relative;
+    margin: {
+      bottom: rem(30);
+    }
 
-	input, select {
-		@include display(block);
-    max-width: rem(264);
-    width: 100%;
-    height: rem(40);
-    border: rem(1) solid var(--white);
-    border-radius: rem(4);
-    background: var(--white);
-    margin: 0 auto;
-    font-size: rem(16);
-    text-align: center;
-    color: var(--dark-grey);
-    font-weight: 700;
-    box-shadow: none!important;
-		-webkit-appearance: none;
+    label {
+      @include display(block);
+      width: 100%;
+      color: var(--orange);
+      font-size: rem(14);
+      font-weight: 400;
+      margin: rem(30) auto rem(5);
+      text-align: center;
+    }
 
-		@include placeholder {
-			color: var(--dark-grey);
-			font-weight: 500;
-			text-transform: uppercase;
-			@include font('Simplon Headline');
-		}
-	}
+    .formulate-input-errors {
+      position: absolute;
+      bottom: rem(-7);
+      right: rem(5);
 
-	label {
-		color: $orange;
-		font-size: rem(14);
-		font-weight: 400;
-		text-align: center;
+      @include display(flex, center, center);
 
-		position: absolute;
-    top: -25px;
-    left: 0;
-    right: 0;
-	}
+      height: rem(15);
+      padding: rem(2) rem(5);
+      border-radius: rem(2);
+      background-color: var(--red);
 
-	.formulate-input-errors {
-		position: absolute;
-		bottom: rem(-7);
-		right: rem(5);
+      color: var(--white);
+      font-size: rem(10);
+    } // -> formulate inpur errors
+  } // -> group
 
-		@include display(flex, center, center);
+  &\:control {
+    input, select {
+      @include display(block);
+      width: 100%;
+      height: rem(72);
+      border: rem(1) solid var(--white);
+      border-radius: rem(4);
+      background: var(--white);
+      margin: 0 auto;
+      font-size: rem(16);
+      text-align: center;
+      color: var(--dark-grey);
+      font-weight: 700;
+      box-shadow: none!important;
+      -webkit-appearance: none;
 
-		height: rem(15);
-		padding: rem(2) rem(5);
-		border-radius: rem(2);
-		background-color: var(--red);
+      @include placeholder {
+        color: var(--dark-grey);
+        font-weight: 500;
+        text-transform: uppercase;
+        @include font('Simplon Headline');
+      }
+    } // -> input,select
+  } // -> control
 
-		color: var(--white);
-		font-size: rem(10);
-	}
-}
+  &\:button {
+    @include size(90, 200);
+    @include display(flex, center, center);
+    border-radius: rem(8) 0 0 rem(8);
+    cursor: pointer;
+    @include font('Simplon');
+
+    background-color: var(--orange);
+    margin: {
+      left: auto;
+      right: rem(-16);
+    }
+
+    svg {
+      margin-right: rem(5);
+      @include change-svg-color($yellow)
+    }
+
+    &\:disabled {
+      opacity: 0.5;
+      touch-action: none;
+      pointer-events: none;
+      cursor: wait;
+    } // -> disabled
+  } // -> button
+
+
+  &\:link {
+    @include display(block);
+    text-align: right;
+
+    color: var(--orange);
+    margin: rem(15) rem(5) rem(15) auto;
+  }
+} // -> form

@@ -1,8 +1,13 @@
 <template>
-  <container view="auth">
+  <container class="auth">
     <HeadersAuth />
 
-    <div class="partners">
+    <h1 class="auth:title">
+      APROVEITE SEUS<br />
+      DESCONTOS EXCLUSÍVOS.
+    </h1>
+
+    <div class="auth:partners">
       <loadImage
         v-for="(partner, index) in partners"
         :key="index"

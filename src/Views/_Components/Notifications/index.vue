@@ -31,4 +31,4 @@
 </template>
 
 <script src="./index.js"></script>
-<style lang="scss" scoped src="./index.scss"></style>
+<style lang="scss" src="./index.scss"></style>

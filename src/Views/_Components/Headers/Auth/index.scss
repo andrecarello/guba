@@ -6,34 +6,40 @@
 // Location: @/views/_components/headers/auth
 //
 
-$component: '.header-auth';
+.auth {
+  &\:header {
+    @include display(flex, center, center);
+    padding: {
+      top: rem(80);
+      bottom: rem(40);
+    };
 
-#{$component} {
-	height: rem(162);
-	@include display(flex, center, center);
-	background-color: var(--light-orange);
 
-	&__content {
-		display: flex;
-		margin: 0 auto;
-	}
+    &__content {
+      @include display(flex, center, center);
+      margin: 0 auto;
+    } // -> content
 
-	h1 {
-		@include font('Simplon Headline');
-		font-size: rem(32);
-		font-weight: 600;
-		color: var(--orange);
+    h1 {
+      @include font('Simplon Headline');
+      font-size: rem(43);
+      font-weight: 400;
+      color: var(--orange);
 
-		flex-grow: 1;
-    margin-left: rem(9);
+      @include grow(true);
+      margin-left: rem(15);
 
-		small {
-			font-size: rem(9);
-			font-weight: 400;
-			color: var(--orange);
+      small {
+        font-size: rem(9);
+        font-weight: 400;
+        color: var(--orange);
 
-			display: block;
-			margin-bottom: rem(4);
-		}
-	}
-}
+        @include display(block);
+        margin: {
+          top: rem(-10);
+          bottom: rem(6)
+        }
+      }
+    } // -> h1
+  } // -> header
+} // -> auth
