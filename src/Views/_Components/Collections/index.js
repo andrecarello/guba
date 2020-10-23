@@ -4,6 +4,9 @@ import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index
 // -> components
 import Discount from '@/Views/_Components/Discount/index.vue'
 
+// -> import icons
+import { ChevronRightIcon } from 'vue-feather-icons'
+
 export default {
   name: 'Collections',
   props: {
@@ -17,6 +20,9 @@ export default {
     discount: Discount,
 
     // -> helpers
-    InterseptedImage
-	},
+    InterseptedImage,
+
+    // -> icons
+    ChevronRightIcon
+  },
 }

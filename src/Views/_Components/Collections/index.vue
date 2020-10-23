@@ -40,7 +40,9 @@
           </footer>
         </router-link>
       </article>
+      <div class="collection:spacer" />
     </div>
+    <div class="collection:next"><ChevronRightIcon size="15" /></div>
   </section>
 </template>
 

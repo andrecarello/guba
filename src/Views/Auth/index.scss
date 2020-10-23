@@ -17,13 +17,13 @@
   &\:partners {
     @include display(flex, center, flex-end);
 
-		height: rem(28);
+		height: rem(42);
     margin: 0 auto rem(40);
 
     img {
       @include display(block);
-			@include circle(38);
-			flex: 0 0 rem(38);
+			@include circle(42);
+			flex: 0 0 rem(42);
 			margin: 0 rem(3);
 			border: rem(1) solid var(--orange);
 		} // -> img

@@ -28,6 +28,8 @@
     line-height: rem(23);
     color: var(--black);
 
+    padding-right: rem(15);
+
     @include grow(true);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,6 +43,7 @@
 		overflow: auto;
     height: rem(390);
     padding-left: rem(18);
+    position: relative;
     @include scrollbar('horizontal', transparent, transparent, transparent, transparent);
 	} // -> items
 
@@ -149,5 +152,27 @@
 			border: rem(1) solid var(--orange);
 			border-radius: rem(10);
 		} // -> button
-	} // -> footer
+  } // -> footer
+
+  &\:next {
+    position: absolute;
+    top: rem(45);
+    left: calc(100% - 26px);
+    z-index: 4;
+
+    @include size(390, 26);
+    @include display(flex, center, center);
+    background-color: var(--white);
+    padding-bottom: rem(165);
+  }
+
+  &\:spacer {
+    @include size(340, 18);
+    flex: 0 0 rem(18);
+    @include display(block);
+    position: relative;
+    z-index: 5;
+    // background: var(--white);
+    background-image: linear-gradient(90deg, transparent 0, $white 20%)
+  } // -> spacer
 } // -> collection
