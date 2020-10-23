@@ -1,0 +1,22 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: animations.scss
+// Location: @/assets/sass/core
+//
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.key{
+  &\:rotate {
+    animation: rotation 2s infinite ease-in-out;
+  }
+}

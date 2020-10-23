@@ -70,17 +70,21 @@
   } // -> control
 
   &\:button {
-    @include size(90, 200);
+    @include size(78, 165);
     @include display(flex, center, center);
-    border-radius: rem(8) 0 0 rem(8);
-    cursor: pointer;
-    @include font('Simplon');
+    border-radius: rem(8);
 
     background-color: var(--orange);
+    color: $yellow;
     margin: {
+      top: rem(15);
       left: auto;
-      right: rem(-16);
+      right: auto;
     }
+
+    @include font('Simplon');
+    font-size: rem(18);
+    cursor: pointer;
 
     svg {
       margin-right: rem(5);

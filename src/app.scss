@@ -6,21 +6,25 @@
  Location: /
 */
 
+// -> import core
 @import "./assets/sass/core/settings",
         "./assets/sass/core/mixins",
-        "./assets/sass/core/extends";
+        "./assets/sass/core/extends",
+        "./assets/sass/core/animations.scss";
 
-
+// -> import layout
 @import "./assets/sass/layout/colors",
 				"./assets/sass/layout/globals",
 				"./assets/sass/layout/spacing",
         "./assets/sass/layout/fonts",
-        "./assets/sass/layout/helpers",
-				"./assets/sass/layout/text",
-				"./assets/sass/layout/form";
+        "./assets/sass/layout/form",
+        "./assets/sass/layout/text",
+        "./assets/sass/layout/spacing";
 
+// -> import helpers
 @import "./assets/sass/components/toast.scss";
 
+// -> import themes
 @import "./assets/sass/themes.default",
 				"./assets/sass/themes.dark";
 

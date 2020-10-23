@@ -15,24 +15,29 @@
     };
 
 
-    &__content {
+    &-content {
       @include display(flex, center, center);
       margin: 0 auto;
     } // -> content
 
-    h1 {
+    &-title {
       @include font('Simplon Headline');
-      font-size: rem(43);
+      font-size: rem(38);
       font-weight: 400;
       color: var(--orange);
+      line-height: rem(38);
+      letter-spacing: rem(-0.8);
 
       @include grow(true);
       margin-left: rem(15);
 
       small {
-        font-size: rem(9);
+        @include font('Simplon');
+        font-size: rem(13);
         font-weight: 400;
         color: var(--orange);
+        line-height: rem(12);
+        letter-spacing: rem(1);
 
         @include display(block);
         margin: {

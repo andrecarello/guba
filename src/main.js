@@ -22,7 +22,6 @@ files.keys().map((key) => {
 // -> end: set controllers
 
 // -> begin: project exclusive imports
-import feather from 'vue-icon';
 import VueFormulate from '@braid/vue-formulate';
 import { pt } from '@braid/vue-formulate-i18n';
 // -> end: project exclusive imports
@@ -45,7 +44,6 @@ if (INTERACTIONS) {
 // import './mock';
 
 // -> begin: uses
-Vue.use(feather, 'v-icon');
 Vue.use(VueFormulate, {
 	plugins: [ pt ]
 });

@@ -23,7 +23,7 @@
 
     <btn
       type="submit"
-      class="button:orange text:yellow mt:15 form:button"
+      class="form:button"
       :class="this.loading ? 'form:button:disabled' :''"
       text="CONTINUAR"
       :state="this.loading"

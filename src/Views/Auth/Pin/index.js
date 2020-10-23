@@ -12,6 +12,9 @@ import { Masks } from '@/Helpers/Mask';
 import { isTestNumber } from '@/Helpers/Misc';
 import { Toast as toast } from '@/Helpers/Toast';
 
+// -> import icons
+import { RefreshCwIcon } from 'vue-feather-icons'
+
 export default {
 	name: 'Auth',
 	data() {
@@ -24,7 +27,8 @@ export default {
 			Masks: Masks,
 
 			// -> loadings
-			loading: false
+      loading: false,
+      sendingPin: false
 
 			// -> controllers
 		};
@@ -33,7 +37,10 @@ export default {
 		Settings.title('Login');
 	},
 	components: {
-		btn: LayoutButton
+    btn: LayoutButton,
+
+    // -> icons
+    RefreshCwIcon
 	},
 	methods: {
 		submitPin() {
@@ -56,7 +63,17 @@ export default {
 					toast('error', 'OPS, verifique se o código é o mesmo que foi enviado.');
 				}, 2000);
 			}
-		}
+    },
+
+    resendPin() {
+      this.sendingPin = !this.sendingPin
+
+      setTimeout(() => {
+        this.sendingPin = !this.sendingPin
+
+        toast('success', 'Seu código de acesso é 1808');
+      }, 2500)
+    }
 	},
 
 	computed: {

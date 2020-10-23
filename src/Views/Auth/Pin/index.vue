@@ -24,15 +24,16 @@
 
     <btn
      type="submit"
-      class="button:orange text:yellow mt:15 form:button"
+      class="form:button"
       :class="this.loading ? 'form:button:disabled' :''"
       text="CONTINUAR"
       :state="this.loading"
     />
 
     <a href="/auth" @click.prevent.stop="resendPin()" class="form:link">
-      <v-icon name="refresh-cw" width="15px" height="15px" class="mr:5"></v-icon>
-      <strong class="font:900 mr:5">Não recebeu?</strong> Enviar novo código
+      <RefreshCwIcon size="15" :class="sendingPin ? 'mr:5 key:rotate' : 'mr:5'" />
+      <span v-if="!sendingPin"><strong class="font:900 mr:5">Não recebeu?</strong> Enviar novo código</span>
+      <span v-else>Estamos enviando um novo código.</span>
     </a>
     <router-link
       to="/auth/msisdn"

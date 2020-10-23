@@ -8,7 +8,7 @@
 
 .auth {
   min-height: 100vh;
-  border-right: rem(16) solid var(--white);
+  border-right: rem(33) solid var(--white);
   background-color: var(--light-orange);
   padding: {
     bottom: rem(50);
@@ -32,8 +32,7 @@
   &\:title {
     color: var(--orange);
     font-size: rem(22);
-    line-height: rem(30);
-    font-weight: bold;
+    line-height: rem(31);
     @include font('Simplon Headline');
 
     width: rem(320);
@@ -53,4 +52,21 @@
       background-color: var(--orange);
     }
   } // -> title
+
+  // -> css for form
+  .form {
+    &\:button {
+      border-radius: rem(8) 0 0 rem(8);
+      margin: {
+        top: rem(40);
+        right: rem(-33);
+      }
+    } // -> button
+
+    &\:control {
+      input {
+        height: rem(78);
+      }
+    }
+  } // -> form
 } // -> auth
