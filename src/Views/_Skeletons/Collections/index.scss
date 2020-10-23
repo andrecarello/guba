@@ -5,12 +5,16 @@
 // File: index.scss
 // Location: @/views/_skeletons/collections
 //
-[skeleton="collections"] {
+.skeleton {
 
   $radius: rem(4);
   $bg: #eee;
 
-  .items{
+  margin: {
+    bottom: rem(52);
+  }
+
+  &\:items{
     @include display(flex);
     overflow: hidden;
     width: 100%;
@@ -21,13 +25,14 @@
     }
   }
 
-  .item {
-    @include size(335, 170);
+  &\:item {
+    @include size(340, 170);
     flex: 0 0 rem(170);
-    @include box-shadow($box-shadow);
     margin: {
       right: rem(20);
     }
+    overflow: hidden;
+    background-color: lighten($bg, 5%);
     border-radius: $radius;
 
     div {
@@ -38,26 +43,26 @@
         height: rem(225);
       }
       &:nth-child(2) {
-        margin-top: rem(32);
+        margin-top: rem(35);
         @include size(20, 100);
       }
       &:nth-child(3) {
-        margin-top: rem(9);
-        @include size(14, 40);
+        margin-top: rem(7);
+        @include size(12, 40);
       }
       &:nth-child(4) {
-        margin-top: rem(9);
-        @include size(26, 74);
+        margin-top: rem(7);
+        @include size(32, 74);
       }
     }
   }
 
-  > .title {
+  &\:title {
     @include size(29, 229);
     background-color: $bg;
     margin: {
       left: rem(18);
-      bottom: rem(37);
+      bottom: rem(25);
     }
     border-radius: $radius;
   }
