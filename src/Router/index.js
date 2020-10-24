@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 // -> import views
 import HomeController from '@/Controllers/HomeController';
 import AuthController from '@/Controllers/AuthController';
+import OfferController from '@/Controllers/OfferController';
 
 Vue.use(VueRouter);
 
@@ -16,7 +17,16 @@ const routes = [
 			KeepAlive: true, // Need to be cached
 			requiresAuth: true
 		}
-	},
+  },
+  {
+    path: '/oferta/:id/:slug',
+    name: 'Offer',
+    component: OfferController.view(),
+    meta: {
+      KeepAlive: false, // Need to be cached
+      requiresAuth: true
+    }
+  },
 	{
 		path: '/auth',
 		name: 'Auth',

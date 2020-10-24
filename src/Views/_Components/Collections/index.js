@@ -1,5 +1,6 @@
 // -> import helpers
 import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index.vue'
+import { slugify } from '@/Helpers/Misc'
 
 // -> components
 import Discount from '@/Views/_Components/Discount/index.vue'
@@ -25,4 +26,7 @@ export default {
     // -> icons
     ChevronRightIcon
   },
+  methods: {
+    slugify
+  }
 }

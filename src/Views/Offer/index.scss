@@ -1,0 +1,165 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/oferta
+//
+.offer {
+  max-width: rem(560);
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F7F8FA;
+  padding: {
+    bottom: rem(25);
+  }
+
+  @include display(flex);
+  flex-direction: column;
+
+  &\:close {
+    position: absolute;
+    top: rem(30);
+    right: rem(30);
+    z-index: 5;
+    @include size(20);
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      @include size(2, 20);
+      background-color: var(--orange);
+    }
+
+    &:after{
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:before{
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  } // -> close
+
+  &\:container {
+    width: rem(340);
+    margin: {
+      left: auto;
+      right: auto;
+      bottom: rem(25);
+    };
+
+    @include display(flex);
+    flex-wrap: wrap;
+  } // -> container
+
+  &\:figure {
+    height: rem(372);
+
+    img {
+      height: rem(372);
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    } // -> img
+  } // -> figure
+
+  &\:brand{
+    @include circle(85);
+    margin: {
+      top: rem(-43);
+      left: auto;
+      right: auto;
+    };
+    border: rem(1) solid var(--orange);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    img {
+      object-fit: cover;
+      @include size(85);
+    } // -> img
+  } // -> brand
+
+  &\:title {
+    color: var(--black);
+    font-size: rem(24);
+    font-weight: bold;
+    line-height: rem(30);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    height: rem(60);
+    width: 100%;
+
+    margin: {
+      top: rem(20);
+    }
+  } // -> title
+
+  &\:description {
+    color: var(--dark-grey);
+    font-size: rem(12);
+    line-height: rem(14);
+
+    width: 100%;
+
+    margin: {
+      top: rem(20);
+      bottom: rem(25);
+    }
+  } // -> description
+
+  &\:discount {
+    color: var(--orange);
+    font-size: rem(30);
+    font-weight: bold;
+    line-height: rem(30);
+
+    height: rem(47);
+
+    @include grow(true);
+    @include display(flex, flex-start, center);
+  } // -> discount
+
+  &\:redeem {
+    font-size: rem(17);
+    line-height: rem(17);
+    color: var(--white);
+
+    background-color: var(--orange);
+    @include display(flex, center, center);
+    @include size(47, 127);
+    border-radius: rem(10);
+    @include box-shadow(0 rem(5) rem(9) rgba($orange, 0.3));
+    margin: {
+      left: auto;
+    }
+  } // -> redeem
+
+  &\:button {
+    font-size: rem(17);
+    line-height: rem(17);
+    color: var(--white);
+
+
+    width: #{(390 / 414) * 100}vw;
+    max-width: rem(390);
+    height: rem(56);
+
+    background-color: var(--orange);
+    @include display(flex, center, center);
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    border-radius: 0 0 rem(25) rem(25);
+  } // -> button
+} // -> offer

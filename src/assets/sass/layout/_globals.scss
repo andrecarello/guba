@@ -6,36 +6,48 @@
 // Location: @/styles/core/
 //
 
-
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
 table {
 	border-collapse: collapse;
-    border-spacing: 0;
+	border-spacing: 0;
 }
 
 * {
 	padding: 0;
-    margin: 0;
-    border: 0;
-    outline: 0 !important;
+	margin: 0;
+	border: 0;
+	outline: 0 !important;
 
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -43,10 +55,10 @@ table {
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 
-    font-size: 100%;
+	font-size: 100%;
 	font: inherit;
 	-webkit-font-smoothing: antialiased;
-    text-decoration: none;
+	text-decoration: none;
 	vertical-align: baseline;
 }
 
@@ -61,37 +73,49 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 
-  @include font("Simplon");
-  @include scrollbar('vertical', $orange, darken($orange, 15%), darken($light-orange, 15%), tomato);
+	@include font("Simplon");
+	@include scrollbar('vertical', $orange, darken($orange, 15%), darken($light-orange, 15%), tomato);
 
 	* {
 		-webkit-overflow-scrolling: touch !important;
-  }
+	}
 
-  #app {
-    max-width: rem(560);
-    margin: {
-      left: auto;
-      right: auto;
-    }
-  }
+	#app {
+		max-width: rem(560);
+		margin: {
+			left: auto;
+			right: auto;
+		}
+	}
 
 	button {
 		background-color: transparent;
 		border: none;
+		outline: none !important;
 	}
 }
 
-
 // -> animations
 @-webkit-keyframes dots-jump {
-  0% {bottom: 0;}
-  40% {bottom: 6px;}
-  80% {bottom: 0;}
+	0% {
+		bottom: 0;
+	}
+	40% {
+		bottom: 6px;
+	}
+	80% {
+		bottom: 0;
+	}
 }
 
 @keyframes dots-jump {
-  0% {bottom: 0;}
-  40% {bottom: 6px;}
-  80% {bottom: 0;}
+	0% {
+		bottom: 0;
+	}
+	40% {
+		bottom: 6px;
+	}
+	80% {
+		bottom: 0;
+	}
 }

@@ -11,7 +11,7 @@
         v-for="(offer, index) in content.offers"
         :key="index"
       >
-        <router-link to="">
+        <router-link :to="'/oferta/' + offer.id + '/' + slugify(offer.title)">
           <InterseptedImage
             :source="offer.image_tertiary"
             :alt="offer.company_name + ' - ' + offer.discount"
@@ -36,7 +36,7 @@
               "
               :unity="!!offer.broke_discount ? offer.broke_discount.unity : ''"
             />
-            <button>Resgatar</button>
+            <div class="collection:button">Resgatar</div>
           </footer>
         </router-link>
       </article>
