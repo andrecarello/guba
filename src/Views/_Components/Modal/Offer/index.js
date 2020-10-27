@@ -1,7 +1,7 @@
 // @ is an alias to /src
 
 // -> import icons
-import { ChevronLeftIcon } from 'vue-feather-icons'
+import { ChevronLeftIcon, ChevronRightIcon } from 'vue-feather-icons'
 
 export default {
   name: 'Modal-Offer',
@@ -13,7 +13,8 @@ export default {
     }
   },
 	components: {
-    ChevronLeftIcon
+    ChevronLeftIcon,
+    ChevronRightIcon
   },
 	mounted() {},
 	computed: {}

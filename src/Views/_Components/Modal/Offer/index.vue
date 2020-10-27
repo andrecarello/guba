@@ -12,8 +12,59 @@
 
       <div class="modal:offer-tutorial">
         <p><strong>Tutorial</strong></p>
-        <div></div>
-        <div></div>
+        <div
+          class="modal:offer-tutorial-content"
+          v-if="content.has_link && content.has_code"
+        >
+          <div>
+            <p>
+              Clique abaixo no botão<br />
+              <strong>Avançar</strong><br />
+              para acessar o site.
+            </p>
+          </div>
+          <ChevronRightIcon class="modal:offer-arrow" size="30" />
+          <div>
+            Insira o seu<br />
+            <strong>CÓDIGO DE DESCONTO</strong><br />
+            no carrinho de compras.
+          </div>
+        </div>
+        <!-- modal:offer-tutorial-content -->
+
+        <div
+          class="modal:offer-tutorial-content"
+          v-if="content.has_link && !content.has_code"
+        >
+          <div>
+            <p>
+              Clique abaixo no botão<br />
+              <strong>IR PARA A OFERTA</strong><br />
+              para acessar o site.
+            </p>
+          </div>
+          <ChevronRightIcon class="modal:offer-arrow" size="30" />
+          <div>
+            Seu <strong>DESCONTO</strong><br />
+            é aplicado<br />
+            automaticamente.
+          </div>
+        </div>
+        <!-- modal:offer-tutorial-content -->
+
+        <div
+          class="modal:offer-tutorial-content"
+          v-if="!content.has_link && content.has_code"
+        >
+          <div>
+            <p>Clique abaixo no botão<br /><strong>VER CUPOM</strong></p>
+          </div>
+          <ChevronRightIcon class="modal:offer-arrow" size="30" />
+          <div>
+            Apresente na <br /><strong>RECEPÇÃO</strong><br />do estabelecimento
+          </div>
+        </div>
+        <!-- modal:offer-tutorial-content -->
 
         <div class="modal:offer-info">
           *Para acessar o site do parceiro é necessário estar conectado à
