@@ -1,6 +1,6 @@
 <template>
   <div class="modal:offer">
-    <div class="modal:offer-header">
+    <div class="modal:offer-header" @click.prevent.stop="$parent.isOpenDetailModal = !$parent.isOpenDetailModal">
       <ChevronLeftIcon class="modal:offer-close" size="22" />
       <div class="modal:offer-title">Retorna para a oferta</div>
     </div>
@@ -23,7 +23,7 @@
               para acessar o site.
             </p>
           </div>
-          <ChevronRightIcon class="modal:offer-arrow" size="30" />
+          <ChevronRightIcon class="modal:offer-arrow" size="30" fill="#ffffff" />
           <div>
             Insira o seu<br />
             <strong>CÓDIGO DE DESCONTO</strong><br />
@@ -37,6 +37,7 @@
           v-if="content.has_link && !content.has_code"
         >
           <div>
+            <loadImage source="icons/tap.svg" alt="Clique abaixo" />
             <p>
               Clique abaixo no botão<br />
               <strong>IR PARA A OFERTA</strong><br />
@@ -45,9 +46,15 @@
           </div>
           <ChevronRightIcon class="modal:offer-arrow" size="30" />
           <div>
-            Seu <strong>DESCONTO</strong><br />
-            é aplicado<br />
-            automaticamente.
+            <loadImage
+              source="icons/shopping-cart.svg"
+              alt="Seu desconto é aplicado"
+            />
+            <p>
+              Seu <strong>DESCONTO</strong><br />
+              é aplicado<br />
+              automaticamente.
+            </p>
           </div>
         </div>
         <!-- modal:offer-tutorial-content -->
@@ -73,7 +80,9 @@
       </div>
     </div>
     <div class="modal:offer-footer">
-      {{ content.discount }}
+      <div class="modal:offer-discount" v-text="content.discount" />
+
+      <a href="/offer/redeem" class="modal:offer-redeem">Resgatar</a>
     </div>
   </div>
 </template>

@@ -31,7 +31,7 @@ export default {
 	mounted() {
 		Settings.title('Home');
 
-    _.controller('collection').getCollections();
+    _.controller('collection').getAll();
 	},
   computed: {
     ...mapGetters('CollectionModel', ['collections']),

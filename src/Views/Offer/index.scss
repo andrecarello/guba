@@ -57,6 +57,9 @@
 
   &\:figure {
     height: rem(372);
+    width: 100%;
+    position: relative;
+    z-index: 2;
 
     img {
       height: rem(372);
@@ -76,7 +79,7 @@
     border: rem(1) solid var(--orange);
     overflow: hidden;
     position: relative;
-    z-index: 2;
+    z-index: 6;
 
     img {
       object-fit: cover;

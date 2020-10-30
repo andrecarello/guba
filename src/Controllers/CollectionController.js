@@ -4,7 +4,7 @@ import axios from 'axios';
 import Controller from './Controller';
 
 class CollectionController extends Controller {
-	getCollections() {
+	getAll() {
 		const { msisdn, cluster } = _.model('auth');
 		this.dispatch('LoadingModel/saveLoading', true);
 
@@ -15,12 +15,6 @@ class CollectionController extends Controller {
 			})
 			.catch((error) => console.log(error))
 			.finally(() => this.dispatch('LoadingModel/saveLoading', false));
-	}
-
-	getUsers() {
-		axios.get('/users').then(({ data }) => {
-			this.dispatch('UserModel/saveUsers', data);
-		});
 	}
 }
 

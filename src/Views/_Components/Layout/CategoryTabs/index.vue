@@ -1,8 +1,20 @@
 <template>
   <section class="tabs">
     <div class="tabs:header" ref="tabs">
-      <a href="/" class="tabs:tab selected" name="category" @click.prevent.stop="selectTab">Categorias</a>
-      <a href="/" class="tabs:tab" name="brand" @click.prevent.stop="selectTab">Marcas</a>
+      <a
+        href="/home/tabs/category"
+        class="tabs:tab selected"
+        name="category"
+        @click.prevent.stop="selectTab"
+        >Categorias</a
+      >
+      <a
+        href="/home/tabs/brands"
+        class="tabs:tab"
+        name="brand"
+        @click.prevent.stop="selectTab"
+        >Marcas</a
+      >
     </div>
 
     <div class="tabs:content active" ref="category">
@@ -22,7 +34,18 @@
       </router-link>
     </div>
 
-    <div class="tabs:content" ref="brand">brand</div>
+    <div class="tabs:content" ref="brand">
+      <div class="tabs:content-brands brands">
+        <router-link :to="'/pesquisa/' + brand.slug" class="brands:item" v-for="(brand, index) in brands" :key="index">
+          <loadImage
+            :source="brand.logo"
+            :alt="brand.name"
+            class="brands:image"
+          />
+          <p class="brands:name" v-text="brand.name" />
+        </router-link>
+      </div>
+    </div>
   </section>
 </template>
 

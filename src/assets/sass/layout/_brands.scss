@@ -1,0 +1,31 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: brand.scss
+// Location: @/assets/sass/layout
+//
+.brands {
+  &\:item {
+    @include size(70, 156);
+    @include display(flex, center, center);
+
+    border: rem(1) solid darken($white, 10%);
+    border-radius: rem(6);
+    background-color: var(--white);
+    margin: {
+      right: rem(15);
+    }
+    padding: {
+      left: rem(18);
+    }
+  } // -> item
+
+  &\:image {
+    @include size(35);
+    border: rem(1) solid darken($white, 15%);
+    margin: {
+      right: rem(12);
+    }
+  }
+} // -> brands

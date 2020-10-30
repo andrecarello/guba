@@ -1,13 +1,22 @@
 <template>
   <section class="offer">
-    <a href="/offer/voltar" class="offer:close" @click.prevent.stop="$router.go(-1)"></a>
-    <figure class="offer:figure">
-      <img :src="offer.image_secondary" :alt="offer.subtitle" />
-    </figure>
+    <a
+      href="/offer/goback"
+      class="offer:close"
+      @click.prevent.stop="$router.go(-1)"
+    />
 
-    <figure class="offer:brand">
-      <img :src="offer.company_logo" :alt="offer.company_name" />
-    </figure>
+    <InterseptedImage
+      :source="offer.image_secondary"
+      :alt="offer.subtitle"
+      class="offer:figure"
+    />
+
+    <InterseptedImage
+      :source="offer.company_logo"
+      :alt="offer.company_name"
+      class="offer:brand"
+    />
 
     <div class="offer:container">
       <h1 class="offer:title" v-text="offer.title" />
@@ -26,7 +35,10 @@
       Detalhes
     </a>
 
-    <modal :content="offer" />
+    <modal
+      :content="offer"
+      :class="isOpenDetailModal ? 'modal:offer:active' : ''"
+    />
   </section>
 </template>
 

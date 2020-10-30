@@ -17,14 +17,14 @@ export default {
 	methods: {
 		slugify,
 		selectTab: function(e) {
-			this.tabs.forEach((tab) => {
-        tab.classList.remove('selected')
-        this.$refs[tab.name].classList.remove('active')
+			[...this.tabs].forEach((tab) => {
+				tab.classList.remove('selected');
+				this.$refs[tab.name].classList.remove('active');
 
 				if (e.target.name === tab.name) {
-          tab.classList.add('selected')
-          this.$refs[e.target.name].classList.add('active')
-        }
+					tab.classList.add('selected');
+					this.$refs[e.target.name].classList.add('active');
+				}
 			});
 		}
 	},
@@ -35,9 +35,11 @@ export default {
 	mounted() {
 		this.tabs = this.$refs.tabs.children;
 
-		_.controller('category').getCategories();
+		_.controller('category').getAll();
+		_.controller('brand').getAll();
 	},
 	computed: {
-		...mapGetters('CategoryModel', [ 'categories' ])
+		...mapGetters('CategoryModel', [ 'categories' ]),
+		...mapGetters('BrandModel', [ 'brands' ])
 	}
 };

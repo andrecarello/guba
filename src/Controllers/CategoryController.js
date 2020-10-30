@@ -5,7 +5,7 @@ import { PROTOCOL } from '@/config/Settings';
 import Controller from './Controller';
 
 class CategoryController extends Controller {
-	getCategories() {
+	getAll() {
 		axios
 			.get(`${PROTOCOL}//api.oston.io/oi-fidelidade/v2/categories`)
 			.then(({ data }) => {

@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 // -> import default controller
 import Controller from './Controller'
 
