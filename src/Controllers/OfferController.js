@@ -9,15 +9,23 @@ class OfferController extends Controller {
 	}
 
 	get(id) {
-    this.dispatch('LoadingModel/saveLoading', true);
+		this.dispatch('LoadingModel/saveLoading', true);
 
 		axios
 			.get('http://api.oston.io/oi-fidelidade/v2/offer/' + id)
 			.then(({ data }) => {
 				this.dispatch('OfferModel/saveOffer', data);
 			})
-			.catch((error) => console.error(error))
+			.catch(({ response }) => {
+				console.error(response.statusText);
+			})
 			.finally(() => this.dispatch('LoadingModel/saveLoading', false));
+	}
+
+	getCoupon(id) {
+		const msisdn = _.model('auth').msisdn;
+
+		return axios.get(`http://api.oston.io/oi-fidelidade/v2/offer/${id}/voucher?phone=${msisdn}`);
 	}
 }
 

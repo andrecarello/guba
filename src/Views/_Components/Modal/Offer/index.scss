@@ -15,20 +15,27 @@
 		height: 100vh;
 
 		background-color: var(--orange);
-		padding: {
-			bottom: rem(40);
-    }
+    overflow: hidden;
 
     opacity: 0;
     visibility: hidden;
     transition: all .2s ease-in-out;
 
-    @include scrollbar('vertical', red, blue, black, white);
-
     &\:active {
       opacity: 1;
       visibility: visible;
       left: 0;
+    }
+
+    &-content {
+      overflow: auto;
+      height: 100vh;
+
+      padding: {
+        bottom: rem(40);
+      }
+
+      @include scrollbar('vertical', $orange, darken($orange, 15%), darken($light-orange, 15%), tomato);
     }
 
 		&-header {
@@ -57,13 +64,14 @@
 			transform: translateY(-50%);
 		} // -> close
 
-		&-content {
+		&-inner {
 			max-width: rem(370);
 			width: 100%;
 			margin: {
 				top: rem(29);
 				left: auto;
-				right: auto;
+        right: auto;
+        bottom: rem(63);
 			}
 			padding: {
 				left: rem(15);
@@ -85,12 +93,11 @@
 					}
 				}
 			}
-		} // -> content
+		} // -> inner
 
 		&-tutorial {
 			margin: {
 				top: rem(45);
-				bottom: rem(63);
 			}
 
 			&-content {
@@ -171,6 +178,7 @@
       margin: {
         left: auto;
       }
+      position: relative;
 
       color: var(--orange);
       font-weight: 400;

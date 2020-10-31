@@ -1,0 +1,192 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/modal/coupon
+//
+.modal {
+	&\:coupon {
+		position: fixed;
+		top: 0;
+		left: 20px;
+		z-index: 100;
+		width: 100%;
+		min-height: 100vh;
+
+		background-color: var(--orange);
+		padding: {
+			bottom: rem(40);
+    }
+    overflow: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+
+    @include scrollbar('vertical', red, blue, black, white);
+
+    &\:active {
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+    }
+
+		&-header {
+			cursor: pointer;
+
+			height: rem(99);
+			position: relative;
+			padding: {
+				left: rem(37);
+				right: rem(17);
+			}
+			background-color: var(--white);
+			@include display(flex, center, center);
+		} // -> header
+
+		&-title {
+			font-size: rem(22);
+			font-weight: bold;
+			line-height: rem(27);
+		} // -> title
+
+		&-close {
+			position: absolute;
+			top: 50%;
+			left: rem(37);
+			transform: translateY(-50%);
+		} // -> close
+
+		&-content {
+			max-width: rem(370);
+			width: 100%;
+			margin: {
+				top: rem(29);
+				left: auto;
+				right: auto;
+			}
+			padding: {
+				left: rem(15);
+				right: rem(15);
+      }
+
+      &-title {
+        max-width: rem(300);
+        margin: {
+          top: rem(50);
+          left: auto;
+          right: auto;
+          bottom: rem(32);
+        }
+
+        color: var(--white);
+        font-size: rem(25);
+        @include font('Simplon Headline');
+
+        strong{
+          font-weight: 900;
+        }
+      }
+
+			p {
+				font-size: rem(12);
+				line-height: rem(20);
+				white-space: pre-line;
+				color: var(--white);
+
+				strong {
+					font-size: rem(19);
+					font-weight: bold;
+					line-height: rem(23);
+					margin: {
+						bottom: rem(10);
+					}
+				} // -> strong
+			} // -> p
+    } // -> content
+
+    &-field {
+      @include display(flex, center, center);
+      position: relative;
+      max-width: rem(300);
+      margin: {
+        left: auto;
+        right: auto;
+      }
+      background-color: var(--white);
+      border-radius: rem(5);
+      padding: {
+        top: rem(8);
+        left: rem(20);
+        right: rem(8);
+        bottom: rem(8);
+      };
+
+      &:before {
+        content: attr(data-before-text);
+        @include display(block);
+        position: absolute;
+        top: rem(10);
+        left: rem(20);
+        right: 0;
+
+        color: var(--orange);
+        font-size: rem(10);
+        font-style: italic;
+      } // -> :before
+
+      &-button {
+        @include size(60);
+        flex: 0 0 rem(60);
+        @include display(flex, center, center);
+        flex-direction: column;
+        border-radius: rem(5);
+        background-color: var(--orange);
+        margin: {
+          left: rem(20);
+        }
+
+        color: var(--white);
+        font-size: rem(12);
+
+        svg {
+          margin: {
+            bottom: rem(2);
+          }
+        } // -> svg
+      } // -> button
+
+      input {
+        @include display(block);
+        height: rem(60);
+        width: 100%;
+        @include grow(true);
+
+        background-color: transparent;
+        pointer-events: none;
+        touch-action: none;
+
+        font-size: rem(20);
+        color: var(--orange);
+        font-weight: 900;
+        @include font('Simplon');
+      } // -> input
+    } // -> field
+
+    &-button {
+      background-color: var(--white);
+      color: var(--orange);
+      @include display(flex, center, center);
+
+      border-radius: rem(5);
+      @include size(50, 150);
+
+      margin: {
+        top: rem(25);
+        left: auto;
+        right: auto;
+      }
+    }
+	} // -> coupon
+} // -> modal

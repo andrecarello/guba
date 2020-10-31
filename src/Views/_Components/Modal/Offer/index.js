@@ -2,12 +2,13 @@
 
 // -> import helpers
 import LoadImage from '@/Views/_Components/Helpers/Image/index.vue';
+import LoadingComponent from '@/Views/_Components/Helpers/Loading/index.vue';
 
 // -> import icons
 import { ChevronLeftIcon, ChevronRightIcon } from 'vue-feather-icons';
 
 export default {
-	name: 'Modal-Offer',
+	name: 'ModalOffer',
 	props: {
 		content: {
 			type: Object | Array,
@@ -21,7 +22,8 @@ export default {
     ChevronRightIcon,
 
     // -> helpers
-    loadImage: LoadImage
+    loadImage: LoadImage,
+    loading: LoadingComponent
 	},
 	mounted() {},
 	computed: {}

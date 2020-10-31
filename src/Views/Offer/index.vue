@@ -1,5 +1,5 @@
 <template>
-  <section class="offer">
+  <section class="offer" v-if="!loading">
     <a
       href="/offer/goback"
       class="offer:close"
@@ -23,23 +23,60 @@
       <p class="offer:description" v-text="offer.subtitle" />
 
       <div class="offer:discount" v-text="offer.discount" />
-
-      <a href="/oferta/resgatar" class="offer:redeem">Resgatar</a>
+      <!-- BEGIN: SHOW COUPON BUTTON -->
+      <a
+        v-if="(!offer.has_link && offer.has_coupon) || (offer.has_link && offer.has_code)"
+        href="/oferta/resgatar"
+        @click.prevent.stop="requestCoupon(offer.id)"
+        class="offer:redeem"
+      >
+        <loading
+          v-if="isLoadingVoucher"
+          background="transparent"
+          dots="#f8f8f8"
+        />
+        <span v-else>Resgatar</span>
+      </a>
+      <!-- END: SHOW COUPON BUTTON -->
+      <!-- BEGIN: SHOW LINK BUTTON -->
+      <a
+        v-if="offer.has_link && !offer.has_code"
+        :href="offer.discount_url"
+        target="_blank"
+        class="offer:redeem"
+      >
+        <loading
+          v-if="isLoadingVoucher"
+          background="transparent"
+          dots="#f8f8f8"
+        />
+        <span v-else>Resgatar</span>
+      </a>
+      <!-- END: SHOW LINK BUTTON -->
     </div>
 
     <a
       href="/oferta/detalhe"
       class="offer:button"
-      @click.prevent.stop="isOpenDetailModal = !isOpenDetailModal"
+      @click.prevent.stop="toggleModal"
     >
       Detalhes
     </a>
 
-    <modal
+    <modalOffer
       :content="offer"
       :class="isOpenDetailModal ? 'modal:offer:active' : ''"
     />
+
+    <modalCoupon
+      v-if="offer.has_code"
+      :class="isOpenCouponModal ? 'modal:coupon:active' : ''"
+      :voucher="voucher"
+      :offer="offer"
+    />
   </section>
+
+  <skeletonOffer v-else />
 </template>
 
 <script src="./index.js"></script>

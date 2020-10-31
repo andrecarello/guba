@@ -24,6 +24,7 @@ files.keys().map((key) => {
 // -> begin: project exclusive imports
 import VueFormulate from '@braid/vue-formulate';
 import { pt } from '@braid/vue-formulate-i18n';
+import VueClipboard from 'vue-clipboard2';
 // -> end: project exclusive imports
 
 // -> begin: styles
@@ -47,6 +48,7 @@ if (INTERACTIONS) {
 Vue.use(VueFormulate, {
 	plugins: [ pt ]
 });
+Vue.use(VueClipboard)
 // -> end: uses
 
 new Vue({

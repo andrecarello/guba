@@ -27,6 +27,7 @@ export default {
     ChevronRightIcon
   },
   methods: {
+    // -> helpers
     slugify
   }
 }
