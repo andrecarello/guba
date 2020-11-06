@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import HomeController from '@/Controllers/HomeController';
 import AuthController from '@/Controllers/AuthController';
 import OfferController from '@/Controllers/OfferController';
+import SearchController from '@/Controllers/SearchController';
 
 Vue.use(VueRouter);
 
@@ -48,6 +49,15 @@ const routes = [
 				component: AuthController.view('Pin')
       }
 		]
+	},
+	{
+		path: '/busca/:query',
+		name: 'Search',
+		component: SearchController.view(),
+		meta: {
+			KeepAlive: false, // Need to be cached
+			requiresAuth: true
+		}
 	}
 ];
 

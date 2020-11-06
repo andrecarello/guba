@@ -15,5 +15,16 @@ export default {
       text: ''
     }
   },
-	computed: {}
+	methods: {
+    searchSubmit: function(e){
+      console.log(this.text);
+
+      this.$router.push({
+          name: 'Search',
+          params: {
+              query: this.text
+          }
+      })
+    },
+  }
 };

@@ -12,7 +12,7 @@
       <label for="search" class="search:label">O que deseja procurar</label>
     </div>
 
-    <button type="submit" class="search:button" :class="!text ? 'disabled' : ''">
+    <button type="submit" class="search:button" :class="!text ? 'disabled' : ''" @click="searchSubmit">
       <loadImage source="icons/search.svg" alt="Pesquisa" />
     </button>
   </form>

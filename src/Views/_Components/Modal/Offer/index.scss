@@ -163,7 +163,7 @@
 			@include display(flex, space-between, center);
 			max-width: rem(370);
       width: 100%;
-
+	  margin: 0 auto;	
       padding: {
 				left: rem(15);
 				right: rem(15);
