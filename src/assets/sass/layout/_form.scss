@@ -73,6 +73,7 @@
     @include size(78, 165);
     @include display(flex, center, center);
     border-radius: rem(8);
+    position: relative;
 
     background-color: var(--orange);
     color: $yellow;
@@ -86,16 +87,18 @@
     font-size: rem(18);
     cursor: pointer;
 
+    transition: all .15s ease-in-out;
+
     svg {
       margin-right: rem(5);
-      @include change-svg-color($yellow)
     }
 
     &\:disabled {
-      opacity: 0.5;
+      background-color: lighten($orange, 26.86);
+      color: $orange;
+
       touch-action: none;
       pointer-events: none;
-      cursor: wait;
     } // -> disabled
   } // -> button
 

@@ -1,5 +1,6 @@
 export const defaultState = {
-	collections: [],
+  collections: [],
+  collection: {}
 };
 
 export default {
@@ -8,7 +9,8 @@ export default {
 	state: defaultState,
 
 	getters: {
-		collections: (state) => state.collections,
+    collections: (state) => state.collections,
+    collection: (state) => state.collection
 	},
 
 	actions: {
@@ -17,6 +19,9 @@ export default {
 		},
 		saveCollections({ commit }, value) {
 			commit('setCollections', value);
+    },
+    saveCollection({ commit }, value) {
+			commit('setCollection', value);
 		},
 	},
 
@@ -28,6 +33,9 @@ export default {
 		},
 		setCollections(state, value) {
 			state.collections = value;
+    },
+    setCollection(state, value) {
+			state.collection = value;
 		},
 	}
 };

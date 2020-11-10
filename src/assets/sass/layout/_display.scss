@@ -24,3 +24,21 @@
 		flex-grow: 0;
 	}
 }
+
+@mixin wrap($status) {
+  @if $status == true {
+    flex-wrap: wrap
+  } @else {
+    flex-wrap: nowrap
+  }
+}
+
+@mixin direction($direction) {
+  @if $direction == 'vertical' OR $direction == 'column' {
+    flex-direction: column;
+  } @else if $direction == 'horizontal' OR $direction == 'row' {
+    flex-direction: row;
+  } @else {
+    flex-direction: $direction;
+  }
+}

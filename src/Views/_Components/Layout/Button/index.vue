@@ -1,7 +1,7 @@
 <template>
 	<button v-if="type === 'submit'">
 		<slot v-if="state">
-			<LoadingIcon :fill="fill" /> AGUARDE ...
+			<LoadingIcon :fill="fill" :stroke="stroke" /> Aguarde
 		</slot>
 		<slot v-else>
 			{{ text }}
@@ -10,7 +10,7 @@
 
 	<a v-else-if="type === 'link'" :href="href">
 		<slot v-if="state">
-			<LoadingIcon :fill="fill" /> AGUARDE ...
+			<LoadingIcon :fill="fill" :stroke="stroke" /> Aguarde
 		</slot>
 		<slot v-else>
 			{{ text }}

@@ -24,7 +24,6 @@
 // -> import helpers
 @import "./assets/sass/components/toast.scss";
 
-// -> import themes
-@import "./assets/sass/themes.default",
-				"./assets/sass/themes.dark";
+// -> import views
+@import "./assets/sass/views/collection.scss";
 

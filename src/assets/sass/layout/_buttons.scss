@@ -39,7 +39,7 @@ button {
   }
 
   &.disabled {
-    opacity: 0.5;
+    background-color: $grey;
     touch-action: none;
     pointer-events: none;
     cursor: wait;

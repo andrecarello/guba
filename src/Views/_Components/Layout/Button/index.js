@@ -24,8 +24,13 @@ export default {
 		fill: {
 			type: String,
 			required: false,
-			default: "#ffffff"
-		},
+			default: "#ff6d00"
+    },
+    stroke: {
+      type: String,
+      required: false,
+      default: '#ff6d00'
+    },
 		href: {
 			type: String,
 			required: false,

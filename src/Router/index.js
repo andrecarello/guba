@@ -6,6 +6,9 @@ import HomeController from '@/Controllers/HomeController';
 import AuthController from '@/Controllers/AuthController';
 import OfferController from '@/Controllers/OfferController';
 import SearchController from '@/Controllers/SearchController';
+import CollectionController from '@/Controllers/CollectionController';
+
+import ErrorController from '@/Controllers/ErrorController';
 
 Vue.use(VueRouter);
 
@@ -28,6 +31,26 @@ const routes = [
       requiresAuth: true
     }
   },
+  {
+		path: '/colecao/:id/:slug',
+		name: 'Collection',
+		component: CollectionController.view(),
+		meta: {
+			KeepAlive: false, // Need to be cached
+			requiresAuth: true
+		}
+  },
+
+  {
+		path: '/busca/:query',
+		name: 'Search',
+		component: SearchController.view(),
+		meta: {
+			KeepAlive: false, // Need to be cached
+			requiresAuth: true
+		}
+  },
+
 	{
 		path: '/auth',
 		name: 'Auth',
@@ -50,15 +73,16 @@ const routes = [
       }
 		]
 	},
-	{
-		path: '/busca/:query',
-		name: 'Search',
-		component: SearchController.view(),
-		meta: {
-			KeepAlive: false, // Need to be cached
-			requiresAuth: true
-		}
-	}
+
+  {
+    path: '*',
+    name: 'NOT_FOUND',
+    component: ErrorController.view(404),
+    meta: {
+      KeepAliv: false,
+      requiresAuth: false
+    }
+  }
 ];
 
 const router = new VueRouter({

@@ -1,18 +1,13 @@
 <template>
-  <section class="collection">
-    <div class="collection:header">
-      <div class="collection:title">{{ content.name }}</div>
-      <router-link
-        :to="'/colecao/' + content.id + '/' + slugify(content.name)"
-        class="collection:link"
-        >Ver tudo</router-link
-      >
+  <div class="collection">
+    <div class="collection:title">
+      {{ collection.name }}
     </div>
 
-    <div class="collection:items">
-      <article
+    <div class="collection:items" direction="vertical">
+      <div
         class="collection:item"
-        v-for="(offer, index) in content.offers"
+        v-for="(offer, index) in collection.offers"
         :key="index"
       >
         <router-link :to="'/oferta/' + offer.id + '/' + slugify(offer.title)">
@@ -43,11 +38,9 @@
             <div class="collection:button">Resgatar</div>
           </footer>
         </router-link>
-      </article>
-      <div class="collection:spacer" />
+      </div>
     </div>
-    <div class="collection:next"><ChevronRightIcon size="15" /></div>
-  </section>
+  </div>
 </template>
 
 <script src="./index.js"></script>
