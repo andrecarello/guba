@@ -52,8 +52,10 @@ export default {
 				setTimeout(() => {
 					this.loading = !this.loading;
 					_.controller('Auth').setHash();
-					_.controller('Auth').setPin(pin);
-					_.controller('Auth').setBalance('1,99');
+					_.controller('Auth').set({
+            pin: pin,
+            balance: '1,99'
+          });
 
 					this.$router.push({ name: 'Home' });
 				}, 2000);

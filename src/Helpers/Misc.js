@@ -164,7 +164,7 @@ export const isTestNumber = (msisdn) => {
 		msisdn = strOnlyNumber(msisdn);
 
 		if (!!regex.exec(msisdn)) {
-			_.controller('auth').setCluster(i);
+			_.controller('auth').set('cluster', i);
 			return {
 				status: true,
 				cluster: i
@@ -172,7 +172,7 @@ export const isTestNumber = (msisdn) => {
 		}
 	}
 
-	_.controller('auth').setCluster(1);
+	_.controller('auth').set('cluster', 1);
 	return {
 		status: false,
 		cluster: 1
@@ -196,12 +196,12 @@ export const isTestUrl = () => {
  *
  * @returns {String} | alphanumeric
  */
-export const hash = () => {
+export const hash = (size = 40) => {
 	let result = '';
 	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 	const charactersLength = characters.length;
 
-	for (let i = 0; i < 40; i++) {
+	for (let i = 0; i < size; i++) {
 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
 	}
 	return result;

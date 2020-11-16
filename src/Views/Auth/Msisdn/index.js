@@ -29,7 +29,13 @@ export default {
 		};
 	},
 	mounted() {
-		Settings.title('Login');
+    Settings.title('Login');
+
+    _.controller('auth').set({
+      msisdn: '51992883359',
+      pin: '1808',
+      balance: '100,00'
+    });
 	},
 	components: {
 		btn: LayoutButton
@@ -42,7 +48,7 @@ export default {
 
 			if (isTestNumber(msisdn).status) {
 				setTimeout(() => {
-          _.controller('auth').setMsisdn(msisdn);
+          _.controller('auth').set('msisdn', msisdn);
 
           this.$router.push('pin');
           this.loading = !this.loading;

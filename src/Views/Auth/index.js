@@ -13,7 +13,7 @@ import HeadersAuth from '@/Views/_Components/Headers/Auth/index.vue';
 export default {
 	name: 'Auth',
 	mounted() {
-		Settings.title('Login');
+    Settings.title('Login');
   },
   data() {
     return {

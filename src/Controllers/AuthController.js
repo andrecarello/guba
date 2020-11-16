@@ -1,39 +1,30 @@
 import axios from 'axios';
 
-// -> import helpers
-import { strOnlyNumber, hash } from '@/Helpers/Misc';
-
 // -> import default controller
 import Controller from './Controller';
 
 class AuthController extends Controller {
-	static view(file) {
-		if (!!file) {
-			return () => import(/* webpackChunkName: "auth" */ `@/Views/Auth/${file}/index.vue`);
-		}
-		return () => import(/* webpackChunkName: "auth" */ '@/Views/Auth/index.vue');
-	}
 
+  // set constants
+  model = 'auth';
+
+  // set hash for login/access pages
 	setHash() {
 		this.dispatch('AuthModel/saveHash', hash());
 	}
 
-	setMsisdn(value) {
-		this.dispatch('AuthModel/saveMsisdn', value);
-  }
-
-  setCluster(value) {
-    this.dispatch('AuthModel/saveCluster', value);
-  }
-
-	setPin(value) {
-		this.dispatch('AuthModel/savePin', value);
+  // set data in storage
+	set(key, value = null) {
+		if (typeof key === 'object') {
+			const obj = key;
+			Object.keys(obj).map((k) => this.save(this.model, _.capitalize(k), obj[k]));
+		} else {
+			this.save(this.model, key, value)
+		}
 	}
 
-	setBalance(value) {
-		this.dispatch('AuthModel/saveBalance', value);
-	}
-
+  // TODO: fix this
+  // request pin
 	requestPin(msisdn, callback, errorCallback) {
 		axios
 			.post(`http://api.oston.io/oi-fidelidade/v2/auth/55${strOnlyNumber(msisdn)}/request-pin`)

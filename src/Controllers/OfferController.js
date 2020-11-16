@@ -4,10 +4,6 @@ import axios from 'axios';
 import Controller from './Controller';
 
 class OfferController extends Controller {
-	static view() {
-		return () => import(/* webpackChunkName: "offer" */ '@/Views/Offer/index.vue');
-	}
-
 	get(id) {
 		this.dispatch('LoadingModel/saveLoading', true);
 

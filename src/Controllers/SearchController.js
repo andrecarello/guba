@@ -6,13 +6,10 @@ import Controller from './Controller';
 import { strOnlyNumber } from '../Helpers/Misc';
 
 class SearchController extends Controller {
-	static view() {
-		return () => import(/* webpackChunkName: "search" */ '@/Views/Search/index.vue');
-	}
 
 	searchOffers(value, page = 1) {
         this.dispatch('LoadingModel/saveLoading', true);
-        
+
         const { msisdn } = _.model('auth');
 
 		axios

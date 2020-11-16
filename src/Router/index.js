@@ -2,11 +2,12 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // -> import views
-import HomeController from '@/Controllers/HomeController';
-import AuthController from '@/Controllers/AuthController';
-import OfferController from '@/Controllers/OfferController';
-import SearchController from '@/Controllers/SearchController';
-import CollectionController from '@/Controllers/CollectionController';
+import ViewController from '@/Controllers/ViewController';
+// import HomeController from '@/Controllers/HomeController';
+// import AuthController from '@/Controllers/AuthController';
+// import OfferController from '@/Controllers/OfferController';
+// import SearchController from '@/Controllers/SearchController';
+// import CollectionController from '@/Controllers/CollectionController';
 
 import ErrorController from '@/Controllers/ErrorController';
 
@@ -16,7 +17,7 @@ const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: HomeController.view(),
+		component: ViewController.view('Home'),
 		meta: {
 			KeepAlive: true, // Need to be cached
 			requiresAuth: true
@@ -25,7 +26,7 @@ const routes = [
   {
     path: '/oferta/:id/:slug',
     name: 'Offer',
-    component: OfferController.view(),
+    component: ViewController.view('Offer'),
     meta: {
       KeepAlive: false, // Need to be cached
       requiresAuth: true
@@ -34,7 +35,7 @@ const routes = [
   {
 		path: '/colecao/:id/:slug',
 		name: 'Collection',
-		component: CollectionController.view(),
+		component: ViewController.view('Collection'),
 		meta: {
 			KeepAlive: false, // Need to be cached
 			requiresAuth: true
@@ -44,7 +45,7 @@ const routes = [
   {
 		path: '/busca/:query',
 		name: 'Search',
-		component: SearchController.view(),
+		component: ViewController.view('Search'),
 		meta: {
 			KeepAlive: false, // Need to be cached
 			requiresAuth: true
@@ -54,7 +55,7 @@ const routes = [
 	{
 		path: '/auth',
 		name: 'Auth',
-		component: AuthController.view(),
+		component: ViewController.view('Auth'),
 		meta: {
 			KeepAlive: false, // Need to be cached
 			requiresAuth: false
@@ -64,12 +65,12 @@ const routes = [
 			{
         name: 'AuthMsisdn',
         path: 'msisdn',
-				component: AuthController.view('Msisdn')
+				component: ViewController.view('Auth/Msisdn')
 			},
 			{
         name: 'AuthPin',
 				path: 'pin',
-				component: AuthController.view('Pin')
+				component: ViewController.view('Auth/Pin')
       }
 		]
 	},

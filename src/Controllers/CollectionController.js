@@ -4,9 +4,6 @@ import axios from 'axios';
 import Controller from './Controller';
 
 class CollectionController extends Controller {
-  static view() {
-		return () => import(/* webpackChunkName: "Collection" */ '../Views/Collection/index.vue')
-  }
 
   get(id) {
     const {msisdn, cluster} = _.model('auth');
