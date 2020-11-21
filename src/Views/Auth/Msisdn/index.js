@@ -29,13 +29,7 @@ export default {
 		};
 	},
 	mounted() {
-    Settings.title('Login');
-
-    _.controller('auth').set({
-      msisdn: '51992883359',
-      pin: '1808',
-      balance: '100,00'
-    });
+		Settings.title('Login');
 	},
 	components: {
 		btn: LayoutButton
@@ -48,12 +42,12 @@ export default {
 
 			if (isTestNumber(msisdn).status) {
 				setTimeout(() => {
-          _.controller('auth').set('msisdn', msisdn);
+					_.controller('auth').set('msisdn', msisdn);
 
-          this.$router.push('pin');
-          this.loading = !this.loading;
+					this.$router.push('pin');
+					this.loading = !this.loading;
 
-          toast('success', 'Seu código de acesso é 1808');
+					toast('success', 'Seu código de acesso é 1808');
 				}, 2000);
 			} else {
 				setTimeout(() => {

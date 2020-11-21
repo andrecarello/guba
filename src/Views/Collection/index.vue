@@ -1,5 +1,5 @@
 <template>
-  <div class="collection">
+  <div class="collection" direction="horizontal">
     <div class="collection:title">
       {{ collection.name }}
     </div>

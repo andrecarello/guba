@@ -3,12 +3,6 @@ import VueRouter from 'vue-router';
 
 // -> import views
 import ViewController from '@/Controllers/ViewController';
-// import HomeController from '@/Controllers/HomeController';
-// import AuthController from '@/Controllers/AuthController';
-// import OfferController from '@/Controllers/OfferController';
-// import SearchController from '@/Controllers/SearchController';
-// import CollectionController from '@/Controllers/CollectionController';
-
 import ErrorController from '@/Controllers/ErrorController';
 
 Vue.use(VueRouter);

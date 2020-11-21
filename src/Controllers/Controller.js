@@ -18,11 +18,11 @@ class Controller {
 				return target[property];
 			}
 		});
-  }
+	}
 
-  save(model, key, value) {
-    this.dispatch(`${_.capitalize(model)}Model/save${_.capitalize(key)}`, value);
-  }
+	save(model, key, value) {
+		this.dispatch(`${_.capitalize(model)}Model/save${_.capitalize(key)}`, value);
+	}
 
 	dispatch() {
 		this.store.dispatch(...arguments);

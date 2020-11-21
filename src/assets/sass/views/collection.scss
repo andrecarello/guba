@@ -65,7 +65,7 @@
       top: rem(25);
       right: rem(20);
     }
-		overflow: hidden;
+    overflow: hidden;
 	} // -> item
 
 	&\:image {
@@ -186,4 +186,8 @@
     // background: var(--white);
     background-image: linear-gradient(90deg, transparent 0, $white 20%)
   } // -> spacer
+
+  &[direction="vertical"] {
+
+  }
 } // -> collection

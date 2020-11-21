@@ -19,10 +19,11 @@
 
   &\:close {
     position: absolute;
-    top: rem(30);
-    right: rem(30);
+    top: rem(20);
+    right: rem(20);
     z-index: 5;
-    @include size(20);
+    @include circle(32);
+    background-color: var(--white);
 
     &:after, &:before {
       content: '';

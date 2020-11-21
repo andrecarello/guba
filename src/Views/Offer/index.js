@@ -57,7 +57,9 @@ export default {
 		}
 	},
 	mounted() {
-		_.controller('offer').get(this.$route.params.id);
+		if (Number(_.model('offer').offer.id) !== Number(this.$route.params.id)) {
+			_.controller('offer').get(this.$route.params.id);
+		}
 	},
 	computed: {
 		...mapGetters('OfferModel', [ 'offer' ]),

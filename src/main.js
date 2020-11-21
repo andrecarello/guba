@@ -27,10 +27,6 @@ import { pt } from '@braid/vue-formulate-i18n';
 import VueClipboard from 'vue-clipboard2';
 // -> end: project exclusive imports
 
-// -> begin: styles
-// import './assets/scss/app.scss';
-// -> end: styles
-
 // -> begin: settings
 import Settings, { ANONYMOUS, INTERACTIONS } from '@/config/Settings';
 if (!localStorage.getItem(ANONYMOUS)) {

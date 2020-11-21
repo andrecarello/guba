@@ -11,6 +11,7 @@ Vue.use(Vuex);
 import { rename } from '@/Helpers/Misc';
 
 const STORAGE = new VuexPersistence({
+  key: 'OIVANTAGENS_STORE',
 	storage: window.localStorage
 });
 

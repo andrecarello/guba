@@ -23,14 +23,14 @@ export default {
 	},
 	methods: {
     onCopy: function() {
-      this.isCopiedVoucher = !this.isCopiedVoucher
+      this.isCopiedVoucher = true
     },
     onError: function() {
       console.log('error')
     },
     toggleModal: function () {
       this.$parent.isOpenCouponModal = !this.$parent.isOpenCouponModal
-      setTimeout(() => this.isCopiedVoucher = !this.isCopiedVoucher, 200)
+      setTimeout(() => this.isCopiedVoucher = false, 200)
     }
   },
   data() {

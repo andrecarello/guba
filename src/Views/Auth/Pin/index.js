@@ -9,11 +9,11 @@ import LayoutButton from '@/Views/_Components/Layout/Button/index.vue';
 
 // -> import helpers
 import { Masks } from '@/Helpers/Mask';
-import { isTestNumber } from '@/Helpers/Misc';
+import { isTestNumber, hash } from '@/Helpers/Misc';
 import { Toast as toast } from '@/Helpers/Toast';
 
 // -> import icons
-import { RefreshCwIcon } from 'vue-feather-icons'
+import { RefreshCwIcon } from 'vue-feather-icons';
 
 export default {
 	name: 'Auth',
@@ -27,8 +27,8 @@ export default {
 			Masks: Masks,
 
 			// -> loadings
-      loading: false,
-      sendingPin: false
+			loading: false,
+			sendingPin: false
 
 			// -> controllers
 		};
@@ -37,10 +37,10 @@ export default {
 		Settings.title('Login');
 	},
 	components: {
-    btn: LayoutButton,
+		btn: LayoutButton,
 
-    // -> icons
-    RefreshCwIcon
+		// -> icons
+		RefreshCwIcon
 	},
 	methods: {
 		submitPin() {
@@ -51,11 +51,11 @@ export default {
 			if (isTestNumber(this.msisdn).status && pin === '1808') {
 				setTimeout(() => {
 					this.loading = !this.loading;
-					_.controller('Auth').setHash();
 					_.controller('Auth').set({
-            pin: pin,
-            balance: '1,99'
-          });
+						pin: pin,
+            balance: '1,99',
+            hash: hash()
+					});
 
 					this.$router.push({ name: 'Home' });
 				}, 2000);
@@ -65,17 +65,17 @@ export default {
 					toast('error', 'OPS, verifique se o código é o mesmo que foi enviado.');
 				}, 2000);
 			}
-    },
+		},
 
-    resendPin() {
-      this.sendingPin = !this.sendingPin
+		resendPin() {
+			this.sendingPin = !this.sendingPin;
 
-      setTimeout(() => {
-        this.sendingPin = !this.sendingPin
+			setTimeout(() => {
+				this.sendingPin = !this.sendingPin;
 
-        toast('success', 'Seu código de acesso é 1808');
-      }, 2500)
-    }
+				toast('success', 'Seu código de acesso é 1808');
+			}, 2500);
+		}
 	},
 
 	computed: {
