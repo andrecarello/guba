@@ -1,17 +1,17 @@
 <template>
-  <section class="collection">
-    <div class="collection:header">
-      <div class="collection:title">{{ content.name }}</div>
+  <section class="collections">
+    <div class="collections:header">
+      <div class="collections:title">{{ content.name }}</div>
       <router-link
         :to="'/colecao/' + content.id + '/' + slugify(content.name)"
-        class="collection:link"
+        class="collections:link"
         >Ver tudo</router-link
       >
     </div>
 
-    <div class="collection:items">
+    <div class="collections:items">
       <article
-        class="collection:item"
+        class="collections:item"
         v-for="(offer, index) in content.offers"
         :key="index"
       >
@@ -19,34 +19,34 @@
           <InterseptedImage
             :source="offer.image_tertiary"
             :alt="offer.company_name + ' - ' + offer.discount"
-            class="collection:image"
+            class="collections:image"
           />
 
           <InterseptedImage
             :source="offer.company_logo"
             :alt="offer.company_name"
-            class="collection:brand"
+            class="collections:brand"
           />
 
-          <h2 class="collection:subtitle">{{ offer.subtitle }}</h2>
-          <h3 class="collection:company">{{ offer.company_name }}</h3>
+          <h2 class="collections:subtitle">{{ offer.subtitle }}</h2>
+          <h3 class="collections:company">{{ offer.company_name }}</h3>
 
           <footer>
             <discount
-              class="collection:discount"
+              class="collections:discount"
               :content="offer.discount"
               :tenths="
                 !!offer.broke_discount ? offer.broke_discount.tenths : ''
               "
               :unity="!!offer.broke_discount ? offer.broke_discount.unity : ''"
             />
-            <div class="collection:button">Resgatar</div>
+            <div class="collections:button">Resgatar</div>
           </footer>
         </router-link>
       </article>
-      <div class="collection:spacer" />
+      <div class="collections:spacer" />
     </div>
-    <div class="collection:next"><ChevronRightIcon size="15" /></div>
+    <div class="collections:next"><ChevronRightIcon size="15" /></div>
   </section>
 </template>
 
