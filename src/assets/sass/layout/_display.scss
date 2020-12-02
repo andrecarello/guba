@@ -18,7 +18,7 @@
 }
 
 @mixin grow($status) {
-	@if $status = true {
+	@if $status == true {
 		flex-grow: 1;
 	} @else {
 		flex-grow: 0;

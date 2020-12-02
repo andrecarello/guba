@@ -1,6 +1,6 @@
 <template>
   <container>
-    <div v-if="loading"><skeleton /></div>
+    <skeleton v-if="loading" />
     <div class="collection" v-else>
       <div class="collection:header">
         <div class="collection:title">
@@ -23,7 +23,7 @@
           />
 
           <div class="collection:body">
-            <h2 class="collection:subtitle">{{ offer.subtitle }}</h2>
+            <h2 class="collection:subtitle">{{ !!offer.subtitle ? offer.subtitle : offer.title }}</h2>
             <h3 class="collection:company">{{ offer.company_name }}</h3>
             <discount
               class="collection:discount"

@@ -1,5 +1,3 @@
-// @ is an alias to /src
-
 // -> import core
 import Settings from '@/config/Settings';
 
@@ -24,8 +22,6 @@ export default {
 
 			// -> loadings
 			loading: false
-
-			// -> controllers
 		};
 	},
 	mounted() {
@@ -42,7 +38,7 @@ export default {
 
 			if (isTestNumber(msisdn).status) {
 				setTimeout(() => {
-					_.controller('auth').set('msisdn', msisdn);
+					_.controller('auth').set({ msisdn: msisdn });
 
 					this.$router.push('pin');
 					this.loading = !this.loading;

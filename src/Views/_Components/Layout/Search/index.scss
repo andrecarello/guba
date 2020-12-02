@@ -6,7 +6,7 @@
 // Location: @/_components/layout/search
 //
 
-.search {
+._search {
   @include display(flex, space-between, center);
   max-width: rem(378);
   width: #{( 378 / 414) * 100}vw;
@@ -79,9 +79,5 @@
     background-color: var(--orange);
     margin: 0;
     cursor: pointer;
-
-    &\:disabled {
-
-    }
   } // ->button
 } // -> search

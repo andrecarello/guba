@@ -37,7 +37,7 @@ const routes = [
   },
 
   {
-		path: '/busca/:query',
+		path: '/busca/:query?',
 		name: 'Search',
 		component: ViewController.view('Search'),
 		meta: {
@@ -69,15 +69,15 @@ const routes = [
 		]
 	},
 
-  {
-    path: '*',
-    name: 'NOT_FOUND',
-    component: ErrorController.view(404),
-    meta: {
-      KeepAliv: false,
-      requiresAuth: false
-    }
-  }
+  // {
+  //   path: '*',
+  //   name: 'NOT_FOUND',
+  //   component: ErrorController.view(404),
+  //   meta: {
+  //     KeepAliv: false,
+  //     requiresAuth: false
+  //   }
+  // }
 ];
 
 const router = new VueRouter({

@@ -5,13 +5,12 @@ import { mapGetters } from 'vuex';
 import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index.vue';
 import { slugify } from '@/Helpers/Misc';
 
-// -> components
+// -> componentsÎ
 import Discount from '@/Views/_Components/Discount/index.vue';
 import Container from '@/Views/_Components/Layout/Container/index.vue';
 
 // -> import skeleton
-import SkeletonCollection from '@/Views/_Skeletons/Collection/index.vue'
-
+import SkeletonCollection from '@/Views/_Skeletons/Collection/index.vue';
 
 export default {
 	name: '',
@@ -25,10 +24,10 @@ export default {
 		discount: Discount,
 
 		// -> helpers
-    InterseptedImage,
+		InterseptedImage,
 
-    // -> skeleton
-    skeleton: SkeletonCollection
+		// -> skeleton
+		skeleton: SkeletonCollection
 	},
 	methods: {
 		// -> helpers

@@ -15,7 +15,12 @@ export default {
 			type: String,
 			required: true,
 			default: () => console.log('The text value is required')
-		},
+    },
+    loadingText: {
+      type: String,
+      required: false,
+      default: 'Clique aqui'
+    },
 		state: {
 			type: Boolean,
 			required: false,

@@ -4,18 +4,21 @@ import axios from 'axios';
 import Controller from './Controller';
 
 class OfferController extends Controller {
+  model = 'offer';
+  loading = 'loading'
+
 	get(id) {
-		this.dispatch('LoadingModel/saveLoading', true);
+		this.dispatch(this.loading, 'loading', true);
 
 		axios
 			.get('http://api.oston.io/oi-fidelidade/v2/offer/' + id)
 			.then(({ data }) => {
-				this.dispatch('OfferModel/saveOffer', data);
+				this.dispatch(this.model, 'offer', data);
 			})
 			.catch(({ response }) => {
 				console.error(response.statusText);
 			})
-			.finally(() => this.dispatch('LoadingModel/saveLoading', false));
+			.finally(() => this.dispatch(this.loading, 'loading', false));
 	}
 
 	getCoupon(id) {

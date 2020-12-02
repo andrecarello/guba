@@ -1,18 +1,19 @@
 <template>
-  <form action="" class="search" @submit.prevent="">
-    <div class="search:group">
+  <form action="" class="_search" @submit.prevent="">
+    <div class="_search:group">
       <input
         type="text"
         name="search"
-        class="search:input"
+        class="_search:input"
+        ref="search"
         id="search"
         v-model="text"
         :class="!!text ? 'has-value' : ''"
       />
-      <label for="search" class="search:label">O que deseja procurar</label>
+      <label for="search" class="_search:label">O que deseja procurar</label>
     </div>
 
-    <button type="submit" class="search:button" :class="!text ? 'disabled' : ''" @click="searchSubmit">
+    <button type="submit" class="_search:button" @click="searchSubmit">
       <loadImage source="icons/search.svg" alt="Pesquisa" />
     </button>
   </form>

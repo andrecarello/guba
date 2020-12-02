@@ -1,5 +1,6 @@
 export const defaultState = {
-	result: []
+	result: [],
+	lastPage: 0
 };
 
 export default {
@@ -8,7 +9,8 @@ export default {
 	state: defaultState,
 
 	getters: {
-		result: (state) => state.result
+		result: (state) => state.result,
+		lastPage: (state) => state.lastPage
 	},
 
 	actions: {
@@ -17,6 +19,9 @@ export default {
 		},
 		saveResult({ commit }, value) {
 			commit('setResult', value);
+		},
+		saveLastPage({ commit }, value) {
+			commit('setLastPage', value);
 		}
 	},
 
@@ -28,6 +33,9 @@ export default {
 		},
 		setResult(state, value) {
 			state.result = value;
+		},
+		setLastPage(state, value) {
+			state.lastPage = value;
 		}
 	}
 };

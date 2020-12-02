@@ -9,18 +9,13 @@ class AuthController extends Controller {
 
 	// set hash for login/access pages
 	setHash() {
-		this.dispatch('AuthModel/saveHash', hash());
+		this.dispatch(this.model, 'hash', hash());
 	}
 
-	// set data in storage
-	set(key, value = null) {
-		if (typeof key === 'object') {
-			const obj = key;
-			Object.keys(obj).map((k) => this.save(this.model, _.capitalize(k), obj[k]));
-		} else {
-			this.save(this.model, key, value);
-		}
-	}
+  // set data in storage
+  set(key, value = null) {
+    this.dispatch(this.model, key, value)
+  }
 
 	// TODO: fix this
 	// request pin
@@ -28,7 +23,7 @@ class AuthController extends Controller {
 		axios
 			.post(`http://api.oston.io/oi-fidelidade/v2/auth/55${strOnlyNumber(msisdn)}/request-pin`)
 			.then(({ data }) => {
-        this.save(this.model, 'pin', data.password);
+        this.dispatch(this.model, 'pin', data.password);
 
 				callback();
 			})

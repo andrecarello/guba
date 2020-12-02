@@ -4,28 +4,22 @@ class Controller {
 	constructor() {
 		self.store = this.store = store;
 		self.state = this.state = store.state;
+  }
 
-		return new Proxy(this, {
-			set(target, p, value, receiver) {
-				if (typeof p === 'string' && p === 'loading') self.store.dispatch('LoadingModel/changeStatus', value);
 
-				// -> Seta o valor
-				target[p] = value;
+  _dispatch(model, key, value) {
+    this.store.dispatch(_.upperFirst(model) + 'Model/save' + _.upperFirst(key), value);
+  }
 
-				return true;
-			},
-			get(target, property) {
-				return target[property];
-			}
-		});
-	}
-
-	save(model, key, value) {
-		this.dispatch(`${_.capitalize(model)}Model/save${_.capitalize(key)}`, value);
-	}
-
-	dispatch() {
-		this.store.dispatch(...arguments);
+	dispatch(model, key, value = null) {
+		if (typeof key === 'object' && value === null) {
+			const obj = key;
+      Object.keys(obj).map((k) =>
+        this._dispatch(model, k, obj[k])
+			);
+		} else {
+      this._dispatch(model, key, value)
+		}
 	}
 }
 

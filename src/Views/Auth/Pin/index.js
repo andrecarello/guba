@@ -53,7 +53,7 @@ export default {
 					this.loading = !this.loading;
 					_.controller('Auth').set({
 						pin: pin,
-            balance: '1,99',
+            balance: '59,31',
             hash: hash()
 					});
 

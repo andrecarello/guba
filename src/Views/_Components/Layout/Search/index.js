@@ -1,30 +1,34 @@
-// -> vuex
-import { mapGetters } from 'vuex';
+// -> components
+import loadImage from '@/Views/_Components/Helpers/Image/index.vue';
 
-// @ is an alias to /src
-import loadImage from '@/Views/_Components/Helpers/Image/index.vue'
+// -> helpers
+import { Toast as toast } from '@/Helpers/Toast';
 
 export default {
 	name: 'search',
 	components: {
-    loadImage
-  },
-  mounted() {},
-  data() {
-    return {
-      text: ''
-    }
-  },
+		loadImage
+	},
+	mounted() {},
+	data() {
+		return {
+			text: ''
+		};
+	},
 	methods: {
-    searchSubmit: function(e){
-      console.log(this.text);
+		searchSubmit: function(e) {
+			if (!this.text) {
+				toast('error', 'Por favor insira o que deseja buscar.');
+				this.$refs.search.focus();
+				return false;
+			}
 
-      this.$router.push({
-          name: 'Search',
-          params: {
-              query: this.text
-          }
-      })
-    },
-  }
+			this.$router.push({
+				name: 'Search',
+				params: {
+					query: this.text
+				}
+			});
+		}
+	}
 };

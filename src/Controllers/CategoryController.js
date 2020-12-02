@@ -5,11 +5,13 @@ import { PROTOCOL } from '@/config/Settings';
 import Controller from './Controller';
 
 class CategoryController extends Controller {
+  model = 'category';
+
 	getAll() {
 		axios
 			.get(`${PROTOCOL}//api.oston.io/oi-fidelidade/v2/categories`)
 			.then(({ data }) => {
-				this.dispatch('CategoryModel/saveCategories', data);
+        this.dispatch(this.model, 'categories', data);
 			})
 			.catch((response) => console.error(response))
 			.finally(() => {});
@@ -19,7 +21,7 @@ class CategoryController extends Controller {
 		axios
 			.get(`/categories/${id}?page=${page}&phone=55${msisdn}`)
 			.then(({ data }) => {
-				this.dispatch('CategoryModel/saveCategory', data);
+				this.dispatch(this.model, 'category', data);
 			})
 			.catch(() => {})
 			.finally(() => {});

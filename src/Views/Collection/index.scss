@@ -51,7 +51,9 @@
 
 	&\:item {
     cursor: pointer;
-    @include size(170, 300);
+    height: rem(170);
+    width: 100%;
+    max-width: 90vw;
     @include display(flex);
     margin: {
       top: rem(25);
@@ -107,9 +109,11 @@
     text-transform: uppercase;
     color: var(--black);
 
-		flex-grow: 1;
-		@include display(flex, flex-start, center);
-		white-space: nowrap;
+    @include display(flex, flex-start, center);
+    margin: {
+      top: auto;
+      bottom: rem(10);
+    };
   } // -> discount
 
   &\:button {
@@ -121,7 +125,6 @@
     @include display(flex, center, center);
     border: rem(1) solid var(--orange);
     border-radius: rem(6);
-    margin-top: auto;
   } // -> button
 
   &\:body {
