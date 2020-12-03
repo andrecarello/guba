@@ -1,0 +1,141 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/faq
+//
+.faq {
+	&\:header {
+		@include display(flex, flex-start, center);
+		padding: {
+			left: rem(20);
+			right: rem(20);
+		}
+		height: rem(100);
+	} // -> header
+
+	&\:brand {
+		@include size(42, 40);
+		margin-right: rem(15);
+	} // -> brand
+
+	&\:link {
+		@include size(23, 64);
+		flex: 0 0 rem(64);
+
+		font-size: rem(18);
+		color: var(--black);
+	} // -> link
+
+	&\:title {
+		@include font('Simplon');
+		font-weight: 400;
+		font-size: rem(19);
+		line-height: rem(23);
+		color: var(--black);
+
+		padding-right: rem(15);
+
+		@include grow(true);
+
+		strong {
+			font-weight: bold;
+			@include display(block);
+		}
+	} // -> title
+
+	&\:close {
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 5;
+		@include circle(32);
+		background-color: var(--white);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			@include size(2, 20);
+			background-color: var(--orange);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	} // -> close
+
+	&\:accordion {
+		max-width: rem(500);
+		width: 90%;
+		width: 90vw;
+		margin: {
+			left: auto;
+			right: auto;
+    }
+
+    &-wrapper {
+      @include display(flex, flex-start, flex-start);
+      @include direction(column-reverse);
+    } // -> wrapper
+
+		&-header {
+			@include display(flex, flex-start, center);
+			height: rem(50);
+			border-bottom: rem(1) solid rgba($black, .16);
+			padding: {
+				left: rem(15);
+				right: rem(15);
+      }
+      width: 100%;
+			cursor: pointer;
+
+			h3 {
+				font-size: rem(14);
+				font-weight: bold;
+
+				@include grow(true);
+				padding: {
+					right: rem(25);
+				}
+			}
+
+			svg {
+        @include size(16);
+        @include transition(all .2s ease);
+			}
+		} // -> header
+
+		&-content {
+      width: 100%;
+			p {
+				font-size: rem(14);
+				color: $dark-grey;
+				padding: {
+					top: rem(25);
+					left: rem(15);
+					right: rem(15);
+					bottom: rem(25);
+				}
+			}
+		} // -> content
+  } // -> accordion
+
+  .v-collapse-content-end + .faq\:accordion-header {
+    h3 {
+      color: $orange;
+    }
+
+    svg {
+      @include rotate(180);
+    }
+  }
+} // -> faq

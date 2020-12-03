@@ -25,6 +25,7 @@ files.keys().map((key) => {
 import VueFormulate from '@braid/vue-formulate';
 import { pt } from '@braid/vue-formulate-i18n';
 import VueClipboard from 'vue-clipboard2';
+import VueCollapse from 'vue2-collapse/src';
 // -> end: project exclusive imports
 
 // -> begin: settings
@@ -44,11 +45,12 @@ if (INTERACTIONS) {
 Vue.use(VueFormulate, {
 	plugins: [ pt ]
 });
-Vue.use(VueClipboard)
+Vue.use(VueClipboard);
+Vue.use(VueCollapse);
 // -> end: uses
 
 new Vue({
 	router: Router,
 	store: Store,
-  render: (h) => h(App)
+	render: (h) => h(App)
 }).$mount('#app');

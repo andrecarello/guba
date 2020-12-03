@@ -4,6 +4,7 @@ import { mapGetters } from 'vuex';
 // -> helpers
 import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index.vue';
 import LoadingComponent from '@/Views/_Components/Helpers/Loading/index.vue';
+import LoadImage from '@/Views/_Components/Helpers/Image/index.vue';
 import { bodyOverflow } from '@/Helpers/Misc';
 
 // @ is an alias to /src
@@ -20,7 +21,8 @@ export default {
 		modalCoupon: ModalCoupon,
 
 		// -> helpers
-		InterseptedImage,
+    InterseptedImage,
+		loadImage: LoadImage,
 		loading: LoadingComponent,
 
 		// -> skeletons

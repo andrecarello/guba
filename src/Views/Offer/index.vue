@@ -1,5 +1,6 @@
 <template>
-  <section class="offer" v-if="!loading">
+  <skeletonOffer v-if="loading" />
+  <section class="offer" v-else>
     <a
       href="/offer/goback"
       class="offer:close"
@@ -7,13 +8,13 @@
     />
 
     <InterseptedImage
-      :source="offer.image_secondary"
+      :source="offer.image_secondary ? offer.image_secondary : require(`@/assets/images/default-img.gif`)"
       :alt="offer.subtitle"
       class="offer:figure"
     />
 
     <InterseptedImage
-      :source="offer.company_logo"
+      :source="offer.company_logo ? offer.company_logo : require(`@/assets/images/default-img.gif`)"
       :alt="offer.company_name"
       class="offer:brand"
     />
@@ -75,8 +76,6 @@
       :offer="offer"
     />
   </section>
-
-  <skeletonOffer v-else />
 </template>
 
 <script src="./index.js"></script>

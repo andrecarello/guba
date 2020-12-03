@@ -46,6 +46,16 @@ const routes = [
 		}
   },
 
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: ViewController.view('Faq'),
+    meta: {
+      KeepAlive: true,
+      requiresAuth: true
+    }
+  },
+
 	{
 		path: '/auth',
 		name: 'Auth',

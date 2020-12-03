@@ -46,12 +46,12 @@ export default {
         {
           icon: 'terms',
           text: 'Termos',
-          url: ''
+          url: 'termos'
         },
         {
           icon: 'faq',
           text: 'FAQ',
-          url: ''
+          url: 'faq'
         },
         {
           icon: 'logout',
