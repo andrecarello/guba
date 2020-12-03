@@ -1,8 +1,3 @@
-// -> vuex
-import { mapGetters } from 'vuex';
-
-// @ is an alias to /src
-
 // -> import helpers
 import LoadImage from '@/Views/_Components/Helpers/Image/index.vue';
 
@@ -52,11 +47,6 @@ export default {
           icon: 'faq',
           text: 'FAQ',
           url: 'faq'
-        },
-        {
-          icon: 'logout',
-          text: 'Sair',
-          url: ''
         }
 			]
 		};

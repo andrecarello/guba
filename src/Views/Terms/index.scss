@@ -1,0 +1,105 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/terms
+//
+.terms {
+	&\:header {
+		@include display(flex, flex-start, center);
+		padding: {
+			left: rem(20);
+			right: rem(20);
+		}
+		height: rem(100);
+	} // -> header
+
+	&\:brand {
+		@include size(42, 40);
+		margin-right: rem(15);
+	} // -> brand
+
+	&\:link {
+		@include size(23, 64);
+		flex: 0 0 rem(64);
+
+		font-size: rem(18);
+		color: var(--black);
+	} // -> link
+
+	&\:title {
+		@include font('Simplon');
+		font-weight: 400;
+		font-size: rem(19);
+		line-height: rem(23);
+		color: var(--black);
+
+		padding-right: rem(15);
+
+		@include grow(true);
+
+		strong {
+			font-weight: bold;
+			@include display(block);
+		}
+	} // -> title
+
+	&\:close {
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 5;
+		@include circle(32);
+		background-color: var(--white);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			@include size(2, 20);
+			background-color: var(--orange);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	} // -> close
+
+	&\:content {
+		max-width: rem(500);
+		width: 90%;
+		width: 90vw;
+		margin: {
+      top: rem(40);
+			left: auto;
+			right: auto;
+		}
+  } // -> content
+
+  &\:paragraph {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: rem(14);
+    line-height: ( 18 / 14 );
+    color: var(--dark-grey);
+    margin-bottom: rem(38);
+    text-align: justify;
+
+    strong {
+      font-weight: bold;
+    }
+
+    a {
+      color: var(--orange);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  } // -> paragraph
+} // -> terms

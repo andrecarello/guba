@@ -6,7 +6,11 @@
     </div>
 
     <Notifications />
-    <a href="/" class="navbar:togglr" @click.prevent.stop="isOpenMenu = !isOpenMenu">
+    <a
+      href="/"
+      class="navbar:togglr"
+      @click.prevent.stop="isOpenMenu = !isOpenMenu"
+    >
       <span v-for="i in 3" :key="i" />
     </a>
 
@@ -29,10 +33,24 @@
       </header>
 
       <section class="navbar:section">
-        <router-link v-for="(item, index) in items" :key="index" :to="item.url" class="navbar:link">
-          <loadImage :container="true" :source="`icons/${item.icon}.svg`" :alt="item.text" />
+        <router-link
+          v-for="(item, index) in items"
+          :key="index"
+          :to="item.url"
+          class="navbar:link"
+          @click.native="isOpenMenu = !isOpenMenu"
+        >
+          <loadImage
+            :container="true"
+            :source="`icons/${item.icon}.svg`"
+            :alt="item.text"
+          />
           <span>{{ item.text }}</span>
         </router-link>
+        <a href="/logout" @click.prevent.stop="logout" class="navbar:link">
+          <loadImage :container="true" source="icons/logout.svg" alt="Sair" />
+          <span>Sair</span>
+        </a>
       </section>
     </div>
   </nav>

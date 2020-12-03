@@ -13,7 +13,7 @@ const routes = [
 		name: 'Home',
 		component: ViewController.view('Home'),
 		meta: {
-			KeepAlive: true, // Need to be cached
+			KeepAlive: true, // Need to be cached?
 			requiresAuth: true
 		}
   },
@@ -22,7 +22,7 @@ const routes = [
     name: 'Offer',
     component: ViewController.view('Offer'),
     meta: {
-      KeepAlive: false, // Need to be cached
+      KeepAlive: false, // Need to be cached?
       requiresAuth: true
     }
   },
@@ -31,7 +31,7 @@ const routes = [
 		name: 'Collection',
 		component: ViewController.view('Collection'),
 		meta: {
-			KeepAlive: false, // Need to be cached
+			KeepAlive: false, // Need to be cached?
 			requiresAuth: true
 		}
   },
@@ -41,7 +41,7 @@ const routes = [
 		name: 'Search',
 		component: ViewController.view('Search'),
 		meta: {
-			KeepAlive: false, // Need to be cached
+			KeepAlive: false, // Need to be cached?
 			requiresAuth: true
 		}
   },
@@ -51,7 +51,17 @@ const routes = [
     name: 'Faq',
     component: ViewController.view('Faq'),
     meta: {
-      KeepAlive: true,
+      KeepAlive: false, // Need to be cached?
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: '/termos',
+    name: 'Terms',
+    component: ViewController.view('Terms'),
+    meta: {
+      KeepAlive: false, // Need to be cached?
       requiresAuth: true
     }
   },
@@ -61,7 +71,7 @@ const routes = [
 		name: 'Auth',
 		component: ViewController.view('Auth'),
 		meta: {
-			KeepAlive: false, // Need to be cached
+			KeepAlive: false, // Need to be cached?
 			requiresAuth: false
     },
     redirect: '/auth/msisdn',
