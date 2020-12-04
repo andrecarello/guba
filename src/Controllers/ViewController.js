@@ -1,5 +1,5 @@
 class ViewController {
-	static view(file) {
+	static load(file) {
 		return () => import(/* webpackChunkName: "[request]" */ `@/Views/${file}/index.vue`);
   }
 }

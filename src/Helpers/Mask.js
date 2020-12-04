@@ -18,6 +18,12 @@ export const Masks = {
 		return __regEx;
   },
 
+  user: function (value) {
+    let __regEx = value.replace(/[A-Za-z, ]/g, '')
+
+    return __regEx
+  },
+
   unset: function (value) {
     return value.replace(/\D/g, "")
   }

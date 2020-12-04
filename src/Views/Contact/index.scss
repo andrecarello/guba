@@ -1,0 +1,190 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/contact
+//
+.contact {
+	&\:header {
+		@include display(flex, flex-start, center);
+		padding: {
+			left: rem(20);
+			right: rem(20);
+		}
+		height: rem(100);
+	} // -> header
+
+	&\:brand {
+		@include size(42, 40);
+		margin-right: rem(15);
+	} // -> brand
+
+	&\:link {
+		@include size(23, 64);
+		flex: 0 0 rem(64);
+
+		font-size: rem(18);
+		color: var(--black);
+	} // -> link
+
+	&\:title {
+		@include font('Simplon');
+		font-weight: 400;
+		font-size: rem(19);
+		line-height: rem(23);
+		color: var(--black);
+
+		padding-right: rem(15);
+
+		@include grow(true);
+
+		strong {
+			font-weight: bold;
+			@include display(block);
+		}
+	} // -> title
+
+	&\:close {
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 5;
+		@include circle(32);
+		background-color: var(--white);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			@include size(2, 20);
+			background-color: var(--orange);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	} // -> close
+
+	&\:group {
+		max-width: rem(264);
+		width: 100%;
+		margin: {
+			left: auto;
+			right: auto;
+			bottom: rem(20);
+		}
+		position: relative;
+
+		label {
+			position: absolute;
+			top: rem(1);
+      left: rem(1);
+      right: rem(1);
+      padding: {
+        top: rem(5);
+        left: rem(10);
+        bottom: rem(5);
+      };
+      background-color: var(--white);
+      border-radius: rem(4);
+
+			color: var(--black);
+			font-size: rem(13);
+			font-weight: bold;
+		}
+
+		.formulate-input-help {
+			@include display(block);
+			position: absolute;
+			top: calc(100% + 5px);
+			right: rem(0);
+
+			font-size: rem(12);
+			color: lighten($grey, 20%);
+			text-align: right;
+		} // -> formulate-input-help
+
+		.formulate-input-errors {
+			li {
+				position: absolute;
+				right: rem(4);
+				bottom: rem(4);
+
+				background-color: var(--red);
+				border-radius: rem(4);
+
+				color: var(--white);
+				font-size: rem(11);
+				padding: {
+					top: rem(3);
+					left: rem(5);
+					right: rem(5);
+					bottom: rem(3);
+				}
+			}
+		} // -> formulate-input-errors
+
+		&[data-is-showing-errors="true"] {
+			input, textarea {
+				border-color: var(--red) !important;
+			}
+		}
+	} // -> group
+
+	&\:control {
+		input {
+			@include size(60, auto);
+			padding: {
+				top: rem(10);
+				left: rem(10);
+				right: rem(10);
+			}
+		} // -> input
+
+		textarea {
+			@include size(200, auto);
+			resize: none;
+			padding: {
+				top: rem(25);
+				left: rem(10);
+				right: rem(10);
+				bottom: rem(10);
+			}
+		}
+
+		input,
+		textarea {
+			border: rem(1) solid lighten($grey, 30%);
+			@include display(block);
+			border-radius: rem(4);
+		}
+  } // -> control
+
+  &\:button {
+    @include display(flex, center, center);
+    @include size(50, 200);
+    border-radius: rem(4);
+    background-color: var(--orange);
+    margin: {
+      top: rem(40);
+      left: auto;
+      right: auto;
+    }
+    cursor: pointer;
+
+    color: var(--white);
+
+    &\:disabled {
+      background-color: var(--light-grey);
+      color: var(--orange);
+    } // -> disabled
+  } // -> button
+} // -> contact

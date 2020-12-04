@@ -11,7 +11,7 @@ const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: ViewController.view('Home'),
+		component: ViewController.load('Home'),
 		meta: {
 			KeepAlive: true, // Need to be cached?
 			requiresAuth: true
@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/oferta/:id/:slug',
     name: 'Offer',
-    component: ViewController.view('Offer'),
+    component: ViewController.load('Offer'),
     meta: {
       KeepAlive: false, // Need to be cached?
       requiresAuth: true
@@ -29,7 +29,7 @@ const routes = [
   {
 		path: '/colecao/:id/:slug',
 		name: 'Collection',
-		component: ViewController.view('Collection'),
+		component: ViewController.load('Collection'),
 		meta: {
 			KeepAlive: false, // Need to be cached?
 			requiresAuth: true
@@ -39,7 +39,7 @@ const routes = [
   {
 		path: '/busca/:query?',
 		name: 'Search',
-		component: ViewController.view('Search'),
+		component: ViewController.load('Search'),
 		meta: {
 			KeepAlive: false, // Need to be cached?
 			requiresAuth: true
@@ -49,7 +49,7 @@ const routes = [
   {
     path: '/faq',
     name: 'Faq',
-    component: ViewController.view('Faq'),
+    component: ViewController.load('Faq'),
     meta: {
       KeepAlive: false, // Need to be cached?
       requiresAuth: true
@@ -59,9 +59,19 @@ const routes = [
   {
     path: '/termos',
     name: 'Terms',
-    component: ViewController.view('Terms'),
+    component: ViewController.load('Terms'),
     meta: {
       KeepAlive: false, // Need to be cached?
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: '/fale-conosco',
+    name: 'Contact',
+    component: ViewController.load('Contact'),
+    meta: {
+      KeepAlive: false, // Need to be cached
       requiresAuth: true
     }
   },
@@ -69,7 +79,7 @@ const routes = [
 	{
 		path: '/auth',
 		name: 'Auth',
-		component: ViewController.view('Auth'),
+		component: ViewController.load('Auth'),
 		meta: {
 			KeepAlive: false, // Need to be cached?
 			requiresAuth: false
@@ -79,12 +89,12 @@ const routes = [
 			{
         name: 'AuthMsisdn',
         path: 'msisdn',
-				component: ViewController.view('Auth/Msisdn')
+				component: ViewController.load('Auth/Msisdn')
 			},
 			{
         name: 'AuthPin',
 				path: 'pin',
-				component: ViewController.view('Auth/Pin')
+				component: ViewController.load('Auth/Pin')
       }
 		]
 	},
@@ -92,7 +102,7 @@ const routes = [
   // {
   //   path: '*',
   //   name: 'NOT_FOUND',
-  //   component: ErrorController.view(404),
+  //   component: ErrorController.load(404),
   //   meta: {
   //     KeepAliv: false,
   //     requiresAuth: false

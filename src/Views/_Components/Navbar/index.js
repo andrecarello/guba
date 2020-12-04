@@ -36,7 +36,7 @@ export default {
         {
           icon: 'doubts',
           text: 'Dúvidas',
-          url: ''
+          url: 'fale-conosco'
         },
         {
           icon: 'terms',
