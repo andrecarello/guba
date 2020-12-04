@@ -28,7 +28,11 @@ class AuthController extends Controller {
 				callback();
 			})
 			.catch(errorCallback);
-	}
+  }
+
+  logout() {
+    this._logout(this.model)
+  }
 }
 
 export default AuthController;

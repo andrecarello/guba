@@ -161,5 +161,27 @@
 			visibility: visible;
 			transform: translateY(0);
 		}
-	} // -> active
+  } // -> active
+
+
+  &\:logout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+
+    &-text {
+      position: absolute;
+      z-index: 6;
+      top: calc(50% - 30px);
+      left: 0;
+      right: 0;
+
+      text-align: center;
+      color: $orange;
+      font-weight: bold;
+    }
+  } // -> logout
 } // -> navbar

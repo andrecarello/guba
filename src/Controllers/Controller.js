@@ -6,6 +6,9 @@ class Controller {
 		self.state = this.state = store.state;
   }
 
+  _logout(model) {
+    this.store.dispatch(_.upperFirst(model) + 'Model/reset')
+  }
 
   _dispatch(model, key, value) {
     this.store.dispatch(_.upperFirst(model) + 'Model/save' + _.upperFirst(key), value);

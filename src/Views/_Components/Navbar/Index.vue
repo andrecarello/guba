@@ -53,6 +53,10 @@
         </a>
       </section>
     </div>
+    <div class="navbar:logout" v-if="logoutLoading">
+      <p class="navbar:logout-text">AGUARDE</p>
+      <Loading background="rgba(0,0,0,.36)" />
+    </div>
   </nav>
 </template>
 

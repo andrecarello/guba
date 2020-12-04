@@ -1,5 +1,3 @@
-// @ is an alias to /src
-
 export default {
   name: 'LoadingComponent',
   props: {
@@ -13,8 +11,5 @@ export default {
       required: false,
       default: '#eeeeee'
     }
-  },
-	components: {},
-	mounted() {},
-	computed: {}
+  }
 };

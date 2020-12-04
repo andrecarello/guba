@@ -25,6 +25,7 @@
       class="form:button"
       :class="this.loading ? 'form:button:disabled' : ''"
       text="CONTINUAR"
+      loadingText="AGUARDE..."
       :state="this.loading"
     />
   </FormulateForm>
