@@ -1,0 +1,92 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/offer-permission
+//
+._permission {
+  &\:content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+
+    @include display(flex, center, center);
+    background-color: rgba($black, 0.3);
+    border-radius: rem(4);
+  } // -> content
+
+  &\:inner {
+    @include circle(100);
+    border: rem(4) solid transparent;
+    background-color: var(--white);
+    @include display(flex, center, center);
+    @include direction(column);
+
+    p {
+      &:nth-child(1) {
+        font-size: rem(12);
+        font-weight: bold;
+        @include font('Simplon');
+        text-align: center;
+        color: var(--dark-grey);
+      }
+
+      &:nth-child(2) {
+        color: var(--white);
+        border-radius: rem(40);
+        font-size: rem(13);
+        font-weight: bold;
+        text-align: center;
+        padding: rem(4) 0;
+        min-width: 98%;
+      }
+
+      &:nth-child(3) {
+        font-size: rem(14);
+        font-weight: bold;
+        text-align: center;
+        @include display(flex, flex-start, center);
+        margin: {
+          top: rem(2);
+        }
+
+        small {
+          font-weight: 400;
+          margin-right: rem(4);
+          display: inline-block;
+        }
+      }
+    }
+
+    // -> themes
+    &.orange {
+      border-color: var(--orange);
+
+      p {
+        &:nth-child(2) {
+          background-color: var(--orange);
+        }
+        &:nth-child(3) {
+          color: var(--orange);
+        }
+      }
+    } // -> orange
+
+    &.red {
+      border-color: var(--red);
+
+      p {
+        &:nth-child(2) {
+          background-color: var(--red);
+        }
+        &:nth-child(3) {
+          color: var(--red);
+        }
+      }
+    } // -> red
+  } // -> inner
+} // -> permission

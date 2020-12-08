@@ -12,18 +12,22 @@
     <div class="collections:items">
       <article
         class="collections:item"
+        :style="'order: ' + offer.cluster"
         v-for="(offer, index) in content.offers"
         :key="index"
       >
         <router-link :to="'/oferta/' + offer.id + '/' + slugify(offer.title)">
-          <InterseptedImage
-            :source="offer.image_tertiary"
-            :alt="offer.company_name + ' - ' + offer.discount"
-            class="collections:image"
-          />
+          <div style="position: relative">
+            <permission v-if="!offerPermission(offer.cluster)" :cluster="offer.cluster" />
+            <InterseptedImage
+              :source="offer.image_tertiary ? offer.image_tertiary : require(`@/assets/images/default-img.gif`)"
+              :alt="offer.company_name + ' - ' + offer.discount"
+              class="collections:image"
+            />
+          </div>
 
           <InterseptedImage
-            :source="offer.company_logo"
+            :source="offer.company_logo ? offer.company_logo : require(`@/assets/images/default-img.gif`)"
             :alt="offer.company_name"
             class="collections:brand"
           />
@@ -44,7 +48,7 @@
           </footer>
         </router-link>
       </article>
-      <div class="collections:spacer" />
+      <div class="collections:spacer" style="order: 99" />
     </div>
     <div class="collections:next"><ChevronRightIcon size="15" /></div>
   </section>

@@ -7,7 +7,7 @@ class OfferController extends Controller {
   model = 'offer';
   loading = 'loading'
 
-	get(id) {
+	get(id, callback) {
 		this.dispatch(this.loading, 'loading', true);
 
 		axios
@@ -18,7 +18,10 @@ class OfferController extends Controller {
 			.catch(({ response }) => {
 				console.error(response.statusText);
 			})
-			.finally(() => this.dispatch(this.loading, 'loading', false));
+			.finally(() => {
+        this.dispatch(this.loading, 'loading', false)
+        callback()
+      });
 	}
 
 	getCoupon(id) {

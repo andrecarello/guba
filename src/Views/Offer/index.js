@@ -1,6 +1,9 @@
 // -> vuex
 import { mapGetters } from 'vuex';
 
+// -> settings
+import Settings from '@/config/Settings';
+
 // -> helpers
 import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index.vue';
 import LoadingComponent from '@/Views/_Components/Helpers/Loading/index.vue';
@@ -21,7 +24,7 @@ export default {
 		modalCoupon: ModalCoupon,
 
 		// -> helpers
-    InterseptedImage,
+		InterseptedImage,
 		loadImage: LoadImage,
 		loading: LoadingComponent,
 
@@ -56,11 +59,20 @@ export default {
 		toggleModal: function() {
 			this.isOpenDetailModal = !this.isOpenDetailModal;
 			bodyOverflow(this.isOpenDetailModal);
+		},
+		setTitle: function() {
+			Settings.title(_.model('offer').offer.title);
 		}
 	},
 	mounted() {
-		if (Number(_.model('offer').offer.id) !== Number(this.$route.params.id)) {
-			_.controller('offer').get(this.$route.params.id);
+		const { id } = this.$route.params;
+
+		if (Number(_.model('offer').offer.id) !== Number(id)) {
+			_.controller('offer').get(id, () => {
+				this.setTitle();
+			});
+		} else {
+			this.setTitle();
 		}
 	},
 	computed: {
