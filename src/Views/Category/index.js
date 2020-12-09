@@ -13,7 +13,7 @@ import Container from '@/Views/_Components/Layout/Container/index.vue';
 import SkeletonCollection from '@/Views/_Skeletons/Collection/index.vue';
 
 export default {
-	name: 'Collection',
+	name: 'Category',
 	data() {
 		return {
 			id: this.$route.params.id
@@ -34,11 +34,11 @@ export default {
 		slugify
 	},
 	mounted() {
-		_.controller('collection').get(this.id);
+		_.controller('category').get(this.id);
 		window.scrollTo(0, 0);
 	},
 	computed: {
-		...mapGetters('CollectionModel', [ 'collection' ]),
+		...mapGetters('CategoryModel', [ 'category' ]),
 		...mapGetters('LoadingModel', [ 'loading' ])
 	}
 };

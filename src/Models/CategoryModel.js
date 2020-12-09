@@ -1,5 +1,6 @@
 export const defaultState = {
-	categories: []
+	categories: [],
+	category: {}
 };
 
 export default {
@@ -8,7 +9,8 @@ export default {
 	state: defaultState,
 
 	getters: {
-		categories: (state) => state.categories
+		categories: (state) => state.categories,
+		category: (state) => state.category
 	},
 
 	actions: {
@@ -17,6 +19,9 @@ export default {
 		},
 		saveCategories({ commit }, value) {
 			commit('setCategories', value);
+		},
+		saveCategory({ commit }, value) {
+			commit('setCategory', value);
 		}
 	},
 
@@ -28,6 +33,9 @@ export default {
 		},
 		setCategories(state, value) {
 			state.categories = value;
+		},
+		setCategory(state, value) {
+			state.category = value;
 		}
 	}
 };

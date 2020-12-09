@@ -1,8 +1,7 @@
-// @ is an alias to /src
-
 // -> import helpers
 import LoadImage from '@/Views/_Components/Helpers/Image/index.vue';
 import LoadingComponent from '@/Views/_Components/Helpers/Loading/index.vue';
+import {isClient} from '@/Helpers/Auth'
 
 // -> import icons
 import { ChevronLeftIcon, ChevronRightIcon } from 'vue-feather-icons';
@@ -25,6 +24,7 @@ export default {
     loadImage: LoadImage,
     loading: LoadingComponent
 	},
-	mounted() {},
-	computed: {}
+	methods: {
+    isClient
+  }
 };

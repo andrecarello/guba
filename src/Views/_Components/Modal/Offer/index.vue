@@ -117,7 +117,7 @@
         <!-- END: BUTTON -->
         <!-- BEGIN: BUTTON -->
         <a
-          v-if="content.has_link && !content.has_code"
+          v-if="content.has_link && !content.has_code && isClient()"
           :href="content.discount_url"
           target="_blank"
           class="modal:offer-redeem"

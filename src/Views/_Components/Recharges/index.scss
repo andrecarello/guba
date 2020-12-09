@@ -1,0 +1,97 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/recharges
+//
+._recharges {
+  $self: &;
+
+	@include grow(true);
+	margin: 0;
+	padding: {
+		top: rem(20);
+		bottom: rem(20);
+	}
+
+	&\:title {
+		color: var(--dark-grey);
+		font-size: rem(17);
+		line-height: 1;
+		text-align: center;
+		font-weight: bold;
+
+		padding: rem(10) 0;
+
+		strong {
+			color: var(--orange);
+			@include display(block);
+		}
+	} // -> title
+
+	&\:items {
+		@include display(flex);
+		@include wrap(true);
+		width: rem(286);
+		margin: 0 auto;
+		padding: {
+			top: rem(15);
+		}
+		position: relative;
+	} // -> items
+
+	&\:item {
+		box-shadow: rem(4) rem(4) rem(10) rgba($black, .16);
+		background-color: var(--white);
+		border-radius: rem(4);
+		@include size(87);
+		flex: 0 0 rem(87);
+		margin: 0 rem(4) rem(15);
+		@include display(flex);
+		@include direction(column);
+    position: relative;
+
+    &-last {
+      #{$self} {
+        &\:bonus {
+          background-color: var(--white);
+          color: var(--orange);
+        }
+      } // -> self
+    }
+	} // -> item
+
+	&\:price {
+		color: var(--orange);
+		font-size: rem(40);
+		font-weight: 600;
+		line-height: rem(24);
+		@include display(flex, center, center);
+		@include grow(true);
+    min-height: rem(45);
+    width: 100%;
+		@include font('Simplon Headline');
+
+		small {
+			font-size: rem(9);
+			font-weight: 300;
+		}
+  } // -> price
+
+  &\:bonus {
+    font-size: rem(12);
+    font-weight: 700;
+    line-height: rem(13);
+    color: var(--light-orange);
+
+    background-color: var(--grey);
+    border-radius: rem(4);
+    min-height: rem(40);
+    width: 100%;
+    margin: rem(-1);
+    @include display(flex, center, center);
+    @include direction(column);
+    @include grow(true);
+  } // -> bonus
+} // -> recharges

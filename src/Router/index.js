@@ -17,6 +17,7 @@ const routes = [
 			requiresAuth: true
 		}
   },
+
   {
     path: '/oferta/:id/:slug',
     name: 'Offer',
@@ -26,6 +27,7 @@ const routes = [
       requiresAuth: true
     }
   },
+
   {
 		path: '/colecao/:id/:slug',
 		name: 'Collection',
@@ -34,6 +36,16 @@ const routes = [
 			KeepAlive: false, // Need to be cached?
 			requiresAuth: true
 		}
+  },
+
+  {
+    path: '/categoria/:id/:slug',
+    name: 'Category',
+    component: ViewController.load('Category'),
+    meta: {
+      KeepAlive: true,
+      requiresAuth: true
+    }
   },
 
   {

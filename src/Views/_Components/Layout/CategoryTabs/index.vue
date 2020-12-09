@@ -19,14 +19,14 @@
 
     <div class="tabs:content active" ref="category">
       <router-link
-        to=""
+        :to="'categoria/'+ category.id +'/'+ slugify(category.name)"
         v-for="(category, index) in categories"
         :key="index"
         class="tabs:link"
       >
         <loadImage
           :container="true"
-          :source="`categories/${slugify(category.name)}.svg`"
+          :source="'categories/' + slugify(category.name) +'.svg'"
           :alt="category.name"
           class="tabs:image"
         />
@@ -36,7 +36,7 @@
 
     <div class="tabs:content" ref="brand">
       <div class="tabs:content-brands brands">
-        <router-link :to="'/pesquisa/' + brand.slug" class="brands:item" v-for="(brand, index) in brands" :key="index">
+        <router-link :to="'/pesquisa/' + brand.name" class="brands:item" v-for="(brand, index) in brands" :key="index">
           <loadImage
             :source="brand.logo"
             :alt="brand.name"
