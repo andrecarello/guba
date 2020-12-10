@@ -16,6 +16,7 @@
         v-for="(offer, index) in content.offers"
         :key="index"
       >
+        <!-- <div class="collections:share"><shareIcon size="20" /></div> -->
         <router-link :to="'/oferta/' + offer.id + '/' + slugify(offer.title)">
           <div style="position: relative">
             <permission v-if="!offerPermission(offer.cluster)" :cluster="offer.cluster" />
@@ -50,7 +51,7 @@
       </article>
       <div class="collections:spacer" style="order: 99" />
     </div>
-    <div class="collections:next"><ChevronRightIcon size="15" /></div>
+    <div class="collections:next"><chevronIcon size="15" /></div>
   </section>
 </template>
 

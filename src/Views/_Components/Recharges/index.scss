@@ -6,7 +6,7 @@
 // Location: @/views/_components/recharges
 //
 ._recharges {
-  $self: &;
+	$self: &;
 
 	@include grow(true);
 	margin: 0;
@@ -50,16 +50,16 @@
 		margin: 0 rem(4) rem(15);
 		@include display(flex);
 		@include direction(column);
-    position: relative;
+		position: relative;
 
-    &-last {
-      #{$self} {
-        &\:bonus {
-          background-color: var(--white);
-          color: var(--orange);
-        }
-      } // -> self
-    }
+		&-last {
+			#{$self} {
+				&\:bonus {
+					background-color: var(--white);
+					color: var(--orange);
+				}
+			} // -> self
+		}
 	} // -> item
 
 	&\:price {
@@ -69,29 +69,29 @@
 		line-height: rem(24);
 		@include display(flex, center, center);
 		@include grow(true);
-    min-height: rem(45);
-    width: 100%;
+		min-height: rem(45);
+		width: 100%;
 		@include font('Simplon Headline');
 
 		small {
 			font-size: rem(9);
 			font-weight: 300;
 		}
-  } // -> price
+	} // -> price
 
-  &\:bonus {
-    font-size: rem(12);
-    font-weight: 700;
-    line-height: rem(13);
-    color: var(--light-orange);
+	&\:bonus {
+		font-size: rem(12);
+		font-weight: 700;
+		line-height: rem(13);
+		color: var(--light-orange);
 
-    background-color: var(--grey);
-    border-radius: rem(4);
-    min-height: rem(40);
-    width: 100%;
-    margin: rem(-1);
-    @include display(flex, center, center);
-    @include direction(column);
-    @include grow(true);
-  } // -> bonus
+		background-color: var(--grey);
+		border-radius: rem(4);
+		min-height: rem(40);
+		width: 100%;
+		margin: rem(-1);
+		@include display(flex, center, center);
+		@include direction(column);
+		@include grow(true);
+	} // -> bonus
 } // -> recharges

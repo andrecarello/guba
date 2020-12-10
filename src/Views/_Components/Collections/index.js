@@ -8,7 +8,8 @@ import Discount from '@/Views/_Components/Discount/index.vue';
 import OfferPermission from '@/Views/_Components/Layout/OfferPermission/index.vue';
 
 // -> import icons
-import { ChevronRightIcon } from 'vue-feather-icons';
+import { ChevronRightIcon, Share2Icon } from 'vue-feather-icons';
+
 
 export default {
 	name: 'Collections',
@@ -27,7 +28,8 @@ export default {
 		InterseptedImage,
 
 		// -> icons
-		ChevronRightIcon
+    chevronIcon: ChevronRightIcon,
+    shareIcon: Share2Icon
 	},
 	methods: {
 		// -> helpers

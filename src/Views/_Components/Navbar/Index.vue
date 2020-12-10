@@ -55,7 +55,7 @@
     </div>
     <div class="navbar:logout" v-if="logoutLoading">
       <p class="navbar:logout-text">AGUARDE</p>
-      <Loading background="rgba(0,0,0,.36)" />
+      <Loading background="transparent" />
     </div>
   </nav>
 </template>

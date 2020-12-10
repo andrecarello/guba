@@ -51,6 +51,10 @@
       right: auto;
       bottom: rem(25);
     };
+    padding: {
+      left: rem(15);
+      right: rem(15);
+    }
 
     @include display(flex);
     flex-wrap: wrap;

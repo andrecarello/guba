@@ -19,11 +19,13 @@ import ModalCoupon from '@/Views/_Components/Modal/Coupon/index.vue';
 import skeletonOffer from '@/Views/_Skeletons/Offer/index.vue';
 
 const Recharges = () => import('@/Views/_Components/Recharges/index.vue');
+const Plans = () => import('@/Views/_Components/Carousel/Plans/index.vue');
 
 export default {
 	name: 'Offer',
 	components: {
     recharges: Recharges,
+    plans: Plans,
 
     // -> modal
 		modalOffer: ModalOffer,

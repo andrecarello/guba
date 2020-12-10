@@ -10,8 +10,16 @@
         :key="index"
         :price="value.price"
         :bonus="value.bonus"
+        :uuid="uuid"
+        :msisdn="msisdn"
       />
-      <item bonus="Outro<br />Valor" class="_recharges:item-last" :price="0" />
+      <item
+        :price="0"
+        bonus="Outro<br />Valor"
+        :uuid="uuid"
+        :msisdn="msisdn"
+        class="_recharges:item-last"
+        />
     </div>
   </section>
 </template>

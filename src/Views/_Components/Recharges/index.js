@@ -4,7 +4,9 @@ export default {
 	name: 'Recharges',
 	data() {
 		return {
-			values: require('@/config/rechargeValues.js').default.values
+      values: require('@/config/rechargeValues.js').default.values,
+      uuid: window.localStorage.getItem('IAMOston'),
+      msisdn: _.model('auth').msisdn
 		};
 	},
 	components: {

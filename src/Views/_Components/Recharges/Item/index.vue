@@ -1,5 +1,5 @@
 <template>
-  <a class="_recharges:item" href="#" v-if="price <= 35">
+  <a class="_recharges:item" :href="href()" target="_blank" v-if="price <= 35">
     <div class="_recharges:price" v-if="price > 0">
       <small>R$</small> {{ price }}
     </div>

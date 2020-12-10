@@ -3,6 +3,7 @@ import Interactions from '../Helpers/Interactions';
 
 export const PROJECT_NAME = 'Oi Vantagens';
 export const PROJECT_SLUG_NAME = 'oi-vantagens';
+export const REFERER = 'OI-VANTAGENS';
 export const CLIENT_NAME = 'OI';
 export const ANONYMOUS = 'uuid';
 export const INTERACTIONS = true;
