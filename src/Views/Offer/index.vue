@@ -27,16 +27,7 @@
       class="offer:brand"
     />
 
-    <div v-if="!isClient()" class="offer:container">
-      <h1 class="offer:title" v-text="offer.title" />
-      <p class="offer:description" v-text="offer.subtitle" />
-
-      <div class="offer:discount" v-text="offer.discount" />
-
-      <recharges />
-    </div>
-
-    <div v-else class="offer:container">
+    <div v-if="offerPermission(offer.pivot.cluster)" class="offer:container">
       <h1 class="offer:title" v-text="offer.title" />
       <p class="offer:description" v-text="offer.subtitle" />
 
@@ -76,18 +67,27 @@
       <!-- END: SHOW LINK BUTTON -->
     </div>
 
-      <a
-        href="/oferta/detalhe"
-        class="offer:button"
-        @click.prevent.stop="toggleModal"
-      >
-        Detalhes
-      </a>
+    <div v-else class="offer:container">
+      <h1 class="offer:title" v-text="offer.title" />
+      <p class="offer:description" v-text="offer.subtitle" />
 
-      <modalOffer
-        :content="offer"
-        :class="isOpenDetailModal ? 'modal:offer:active' : ''"
-      />
+      <div class="offer:discount" v-text="offer.discount" />
+
+      <recharges v-if="checkOffer(offer) < 3" />
+      <plans v-else-if="checkOffer(offer) === 3" />
+    </div>
+    <a
+      href="/oferta/detalhe"
+      class="offer:button"
+      @click.prevent.stop="toggleModal"
+    >
+      Detalhes
+    </a>
+
+    <modalOffer
+      :content="offer"
+      :class="isOpenDetailModal ? 'modal:offer:active' : ''"
+    />
 
     <slot v-if="isClient()">
       <modalCoupon

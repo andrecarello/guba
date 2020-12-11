@@ -6,5 +6,317 @@
 // Location: @/views/_componets/carousel/plans
 //
 ._plans {
+	$slick: '.slick';
 
+	width: 100%;
+
+	&\:title {
+		color: var(--dark-grey);
+		font-size: rem(17);
+		line-height: 1;
+		text-align: center;
+		font-weight: bold;
+
+		padding: rem(10) 0;
+
+		span {
+			color: var(--orange);
+			@include display(block);
+		}
+	} // -> title
+
+	&\:item {
+		max-width: rem(262);
+		background: var(--orange);
+		border-radius: rem(17) rem(17) rem(17) 0;
+		overflow: hidden;
+		@include display(block !important);
+		@include box-shadow(rem(4) rem(4) rem(10) rgba($black, .16));
+		padding: {
+			top: rem(15);
+			left: rem(0);
+			right: rem(0);
+			bottom: rem(0);
+		}
+		margin: {
+			top: rem(0);
+			left: auto;
+			right: auto;
+			bottom: rem(20);
+		}
+	} // -> item
+
+	&\:header {
+		padding: {
+			bottom: rem(50);
+		}
+	} // -> header
+
+	&\:data {
+		font-size: rem(64);
+		font-weight: bold;
+		text-align: center;
+		color: var(--white);
+		@include font('Simplon Headline');
+
+		small {
+			@include display(block);
+			font-size: rem(13);
+			font-weight: 300;
+			text-align: center;
+			margin: {
+				bottom: rem(5);
+			}
+		}
+	} // -> data
+
+	&\:apps {
+		@include display(flex, center, center);
+		min-height: rem(30);
+		position: relative;
+		margin: {
+			top: rem(5);
+		}
+		padding: {
+			top: rem(25);
+		}
+
+		&:after {
+			content: '+';
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			color: var(--yellow);
+			font-weight: bold;
+			font-size: rem(17);
+		} // -> after
+	} // -> apps
+
+	&\:app {
+		@include display(block);
+		@include size(21);
+		margin: {
+			left: rem(2);
+			right: rem(2);
+		}
+	} // -> app
+
+	&\:buttons {
+		@include display(flex, center, center);
+		height: 0;
+	} // -> buttons
+
+	&\:button {
+		@include display(flex, center, center);
+		border-radius: rem(7);
+		height: rem(55);
+		width: 100%;
+		max-width: rem(201);
+		flex: 0 0 rem(201);
+		background-color: var(--yellow);
+		margin: 0 auto;
+		border: none !important;
+
+		text-transform: none !important;
+		color: var(--orange);
+		font-size: rem(22);
+		font-weight: bold;
+
+		@include box-shadow(rem(4) rem(4) rem(10) rgba($black, .16));
+	} // -> button
+
+	&\:footer {
+		@include display(flex);
+		@include wrap(true);
+		background-color: var(--white);
+		border-top-left-radius: rem(17);
+		padding: {
+			top: rem(50);
+		}
+	} // -> footer
+
+	&\:info {
+		font-size: rem(9);
+		color: var(--dark-grey);
+		font-weight: 400;
+		text-align: right;
+		width: rem(93);
+		flex: 0 0 rem(93);
+		padding: {
+			left: rem(16);
+		}
+
+		strong {
+			font-weight: bold;
+		}
+	} // -> info
+
+	&\:price {
+		@include display(flex, center, center);
+		@include grow(true);
+		@include font('Simplon Headline');
+
+		&-unity {
+			font-size: rem(75);
+			color: var(--dark-grey);
+			font-weight: bold;
+			line-height: 0.8;
+		} // -> unity
+
+		&-tenths {
+			font-size: rem(38);
+			font-weight: bold;
+			color: var(--dark-grey);
+			line-height: 1;
+			margin-top: rem(-25);
+		} // -> tenths
+
+		&-month {
+			font-size: rem(11);
+			font-weight: 300;
+			color: var(--grey);
+
+			margin: {
+				top: rem(30);
+				left: rem(-40);
+			}
+		} // -> month
+	} // -> price
+
+	&\:benefits {
+		width: 100%;
+		min-height: rem(32);
+		color: var(--orange);
+		font-weight: bold;
+		font-size: rem(11);
+		@include display(flex, flex-start, center);
+		padding: 0 rem(20);
+
+		svg {
+			@include rotate(0);
+			transition: all .1s ease;
+		}
+
+		&-row {
+			padding: 0 rem(5);
+			@include display(flex, flex-start, center);
+			min-height: rem(30);
+			margin: {
+				bottom: rem(5);
+			}
+
+			color: var(--grey);
+			font-size: rem(11);
+			text-align: left;
+			font-weight: bold;
+			line-height: 1;
+
+			img {
+				margin: {
+					right: rem(5);
+				}
+			} // -> img
+
+			a {
+				color: var(--orange);
+				font-weight: bold;
+				text-decoration: underline;
+				margin: {
+					left: rem(3);
+				}
+			} // -> a
+		} // -> row
+
+		&-show {
+			svg {
+				@include rotate(180);
+			}
+		}
+	} // -> benefits
+
+	#{$slick} {
+		&-prev,
+		&-next {
+			@include circle(42);
+			top: rem(187);
+      z-index: 8;
+      background-color: var(--white);
+      @include display(flex, center, center);
+
+      svg {
+        stroke: var(--orange);
+      }
+
+			&:before {
+        content: '';
+        @include display(none);
+				// @include display(block);
+				// background: {
+				// 	image: url('/images/icons/carousel-arrow.svg');
+				// 	size: cover;
+				// 	position: 50%;
+				// 	repeat: no-repeat;
+				// }
+				// @include circle(36);
+				// color: transparent !important;
+				// opacity: 1;
+			}
+		}
+
+		&-prev {
+			@include box-shadow(rem(4) rem(4) rem(10) rgba($black, .16));
+			left: 0;
+		} // -> prev
+
+		&-next {
+			@include box-shadow(rem(-4) rem(-4) rem(10) rgba($black, .16));
+      right: 0;
+			// @include transform(
+      //   rotate(180deg) translate(0, 50%)
+      // );
+    } // -> next
+
+    &-disabled {
+      opacity: .5;
+      pointer-events: none;
+      touch-action: none;
+    } // -> disabled
+
+		&-dots {
+			@include display(flex!important, center, center);
+			height: rem(7);
+			margin: 0 auto;
+			position: static !important;
+
+			li {
+				width: rem(23);
+				height: rem(7);
+				@include display(flex!important, center, center);
+				margin: 0;
+				padding: 0;
+
+				button {
+					@include circle(7);
+					background-color: rgba($orange, .3);
+					margin: 0 auto;
+					padding: 0;
+					transition: all .1s ease;
+
+					&::before {
+						display: none;
+					}
+				}
+
+				&#{$slick} {
+					&-active {
+						button {
+							@include size(7, 15);
+							background-color: var(--orange);
+						}
+					}
+				}
+			}
+		}
+	}
 } // -> plans

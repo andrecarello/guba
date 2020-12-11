@@ -8,7 +8,6 @@ import { CLUSTERS } from '../config/Settings';
 */
 export const offerPermission = (offerCluster) => {
 	const { cluster } = _.model('auth');
-
 	return cluster >= parseInt(offerCluster)
 };
 
@@ -19,7 +18,6 @@ export const offerPermission = (offerCluster) => {
  */
 export const isClient = () => {
 	const cluster = _.model('auth').cluster;
-
 	return cluster >= CLUSTERS.controle;
 };
 

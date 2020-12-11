@@ -9,14 +9,15 @@ import InterseptedImage from '@/Views/_Components/Helpers/InterseptedImage/index
 import LoadingComponent from '@/Views/_Components/Helpers/Loading/index.vue';
 import LoadImage from '@/Views/_Components/Helpers/Image/index.vue';
 import { bodyOverflow } from '@/Helpers/Misc';
-import { isClient } from '@/Helpers/Auth';
+import { isClient, offerPermission } from '@/Helpers/Auth';
 
-// @ is an alias to /src
+// -> modal
 import ModalOffer from '@/Views/_Components/Modal/Offer/index.vue';
 import ModalCoupon from '@/Views/_Components/Modal/Coupon/index.vue';
 
 // -> import skeleton
 import skeletonOffer from '@/Views/_Skeletons/Offer/index.vue';
+
 
 const Recharges = () => import('@/Views/_Components/Recharges/index.vue');
 const Plans = () => import('@/Views/_Components/Carousel/Plans/index.vue');
@@ -51,6 +52,7 @@ export default {
 	},
 	methods: {
     isClient,
+    offerPermission,
 		requestCoupon: function(id) {
 			this.isLoadingVoucher = true;
 
@@ -71,10 +73,15 @@ export default {
 		},
 		setTitle: function() {
 			Settings.title(_.model('offer').offer.title);
-		}
+    },
+    checkOffer: function (offer) {
+      if (!!offer.pivot) return Number(offer.pivot.cluster)
+      else if (!!offer.cluster) return Number(offer.cluster)
+    }
 	},
 	mounted() {
-		const { id } = this.$route.params;
+    const { id } = this.$route.params;
+    console.log(this.offer)
 
 		if (Number(_.model('offer').offer.id) !== Number(id)) {
 			_.controller('offer').get(id, () => {
