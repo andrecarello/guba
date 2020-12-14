@@ -18,24 +18,23 @@ import ModalCoupon from '@/Views/_Components/Modal/Coupon/index.vue';
 // -> import skeleton
 import skeletonOffer from '@/Views/_Skeletons/Offer/index.vue';
 
-
 const Recharges = () => import('@/Views/_Components/Recharges/index.vue');
 const Plans = () => import('@/Views/_Components/Carousel/Plans/index.vue');
 
 export default {
 	name: 'Offer',
 	components: {
-    recharges: Recharges,
-    plans: Plans,
+		recharges: Recharges,
+		plans: Plans,
 
-    // -> modal
+		// -> modal
 		modalOffer: ModalOffer,
 		modalCoupon: ModalCoupon,
 
 		// -> helpers
 		InterseptedImage,
 		loadImage: LoadImage,
-    loading: LoadingComponent,
+		loading: LoadingComponent,
 
 		// -> skeletons
 		skeletonOffer
@@ -47,12 +46,12 @@ export default {
 			// -> states
 			isOpenDetailModal: false,
 			isOpenCouponModal: false,
-      isLoadingVoucher: false
+			isLoadingVoucher: false
 		};
 	},
 	methods: {
-    isClient,
-    offerPermission,
+		isClient,
+		offerPermission,
 		requestCoupon: function(id) {
 			this.isLoadingVoucher = true;
 
@@ -73,15 +72,17 @@ export default {
 		},
 		setTitle: function() {
 			Settings.title(_.model('offer').offer.title);
-    },
-    checkOffer: function (offer) {
-      if (!!offer.pivot) return Number(offer.pivot.cluster)
-      else if (!!offer.cluster) return Number(offer.cluster)
-    }
+		},
+		checkOffer: function(offer) {
+			if (!!offer.pivot) return Number(offer.pivot.cluster);
+
+			return 2;
+		}
 	},
 	mounted() {
-    const { id } = this.$route.params;
-    console.log(this.offer)
+		const { id } = this.$route.params;
+
+		window.scrollTo(0, 0);
 
 		if (Number(_.model('offer').offer.id) !== Number(id)) {
 			_.controller('offer').get(id, () => {

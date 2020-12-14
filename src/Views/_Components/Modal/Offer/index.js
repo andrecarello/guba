@@ -23,8 +23,5 @@ export default {
     // -> helpers
     loadImage: LoadImage,
     loading: LoadingComponent
-	},
-	methods: {
-    isClient
-  }
+	}
 };

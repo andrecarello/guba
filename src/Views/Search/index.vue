@@ -55,6 +55,7 @@
     </div>
   </container>
 
+  <!-- CASO NÃO TENHA RESULTADO -->
   <container v-else>
     <div class="search">
       <div class="search:header">
@@ -62,7 +63,10 @@
       </div>
 
       <div class="search:empty">
-        <p>Infelizmente a busca por <strong>{{ query }}</strong> não teve nenhum resultado.</p>
+        <p>
+          Infelizmente a busca por <strong>{{ query }}</strong> não teve nenhum
+          resultado.
+        </p>
         <p>Deseja pesquisar outro termo?</p>
         <form action="" @submit.prevent="submit">
           <input v-model="form.search" />

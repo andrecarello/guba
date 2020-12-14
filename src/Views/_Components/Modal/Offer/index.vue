@@ -1,10 +1,10 @@
 <template>
   <div class="modal:offer">
     <div class="modal:offer-content">
-      <div class="modal:offer-header" @click.prevent.stop="$parent.toggleModal">
+      <a href="/" class="modal:offer-header" @click.prevent.stop="$parent.toggleModal">
         <ChevronLeftIcon class="modal:offer-close" size="22" />
         <div class="modal:offer-title">Retornar para a oferta</div>
-      </div>
+      </a>
       <div class="modal:offer-inner">
         <div class="modal:offer-rules">
           <p><strong>Regras</strong></p>
@@ -97,6 +97,7 @@
       </div>
       <div class="modal:offer-footer">
         <div class="modal:offer-discount" v-text="content.discount" />
+        <slot v-if="$parent.offerPermission(content.pivot.cluster)">{{ content.id }}</slot>
         <!-- BEGIN: BUTTON -->
         <a
           v-if="
