@@ -38,7 +38,10 @@ export default {
 
 			if (isTestNumber(msisdn).status) {
 				setTimeout(() => {
-					_.controller('auth').set({ msisdn: msisdn });
+					_.controller('auth').set({
+            msisdn: msisdn,
+            ddd: msisdn.substring(0, 2)
+          });
 
 					this.$router.push('pin');
 					this.loading = !this.loading;

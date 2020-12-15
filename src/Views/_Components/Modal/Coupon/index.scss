@@ -33,7 +33,8 @@
     }
 
 		&-header {
-			cursor: pointer;
+      cursor: pointer;
+      color: var(--black);
 
 			height: rem(99);
 			position: relative;

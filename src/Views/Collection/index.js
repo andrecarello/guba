@@ -16,7 +16,9 @@ export default {
 	name: 'Collection',
 	data() {
 		return {
-			id: this.$route.params.id
+      id: this.$route.params.id,
+      ddd: _.model('auth').ddd,
+      cluster: _.model('auth').cluster
 		};
 	},
 	components: {

@@ -54,7 +54,8 @@ export default {
 					_.controller('Auth').set({
 						pin: pin,
             balance: '59,31',
-            hash: hash()
+            hash: hash(),
+            cluster: isTestNumber(this.msisdn).cluster
 					});
 
 					this.$router.push({ name: 'Home' });

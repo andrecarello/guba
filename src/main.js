@@ -29,12 +29,15 @@ import VueCollapse from 'vue2-collapse/src';
 // -> end: project exclusive imports
 
 // -> begin: settings
-import Settings, { ANONYMOUS, INTERACTIONS } from '@/config/Settings';
+import Settings, { ANONYMOUS, INTERACTIONS, ANALYTICS } from '@/config/Settings';
 if (!localStorage.getItem(ANONYMOUS)) {
 	Settings.anonymous();
 }
 if (INTERACTIONS) {
 	Settings.interactions();
+}
+if(ANALYTICS) {
+  Settings.analytics();
 }
 // -> end: settings
 

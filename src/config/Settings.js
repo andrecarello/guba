@@ -1,5 +1,6 @@
-import Anonymous from '../Helpers/Anonymous';
-import Interactions from '../Helpers/Interactions';
+import Anonymous from '@/Helpers/Anonymous';
+import Interactions from '@/Helpers/Interactions';
+import Analytics from '@/Helpers/Analytics'
 
 export const PROJECT_NAME = 'Oi Vantagens';
 export const PROJECT_SLUG_NAME = 'oi-vantagens';
@@ -7,6 +8,7 @@ export const REFERER = 'OI-VANTAGENS';
 export const CLIENT_NAME = 'OI';
 export const ANONYMOUS = 'uuid';
 export const INTERACTIONS = true;
+export const ANALYTICS = true;
 export const TEST_EMAIL = '';
 export const TEST_PASSWORD = '';
 export const CLIENT_EMAIL_SUPPORT = '';
@@ -40,5 +42,9 @@ export default {
 		if (INTERACTIONS) return Interactions.init({ schema: schema });
 
 		return null;
-	}
+  },
+
+  analytics: () => {
+    if (ANALYTICS) return Analytics.init();
+  }
 };

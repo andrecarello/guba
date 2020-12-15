@@ -12,7 +12,13 @@ import { ChevronRightIcon, Share2Icon } from 'vue-feather-icons';
 
 
 export default {
-	name: 'Collections',
+  name: 'Collections',
+  data() {
+    return {
+      cluster: _.model('auth').cluster,
+      ddd: _.model('auth').ddd
+    }
+  },
 	props: {
 		content: {
 			type: Object,

@@ -1,9 +1,9 @@
 <template>
   <div class="modal:coupon">
-    <div class="modal:coupon-header" @click.prevent.stop="toggleModal">
+    <a href="/" class="modal:coupon-header" @click.prevent.stop="toggleModal">
       <ChevronLeftIcon class="modal:coupon-close" size="22" />
       <div class="modal:coupon-title">Retornar para a oferta</div>
-    </div>
+    </a>
     <div class="modal:coupon-content" v-if="$parent.isOpenCouponModal">
       <h3 class="modal:coupon-content-title">
         Desconto especial de <strong>{{ offer.discount }}</strong>

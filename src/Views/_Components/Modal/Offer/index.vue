@@ -97,7 +97,7 @@
       </div>
       <div class="modal:offer-footer">
         <div class="modal:offer-discount" v-text="content.discount" />
-        <slot v-if="$parent.offerPermission(content.pivot.cluster)">{{ content.id }}</slot>
+
         <!-- BEGIN: BUTTON -->
         <a
           v-if="

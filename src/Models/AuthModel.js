@@ -1,5 +1,6 @@
 export const defaultState = {
 	msisdn: '',
+	ddd: '',
 	pin: '',
 	hash: '',
 	cluster: '',
@@ -13,6 +14,7 @@ export default {
 
 	getters: {
 		msisdn: (state) => state.msisdn,
+		ddd: (state) => state.ddd,
 		pin: (state) => state.pin,
 		hash: (state) => state.hash,
 		cluster: (state) => state.cluster,
@@ -25,6 +27,9 @@ export default {
 		},
 		saveMsisdn({ commit }, value) {
 			commit('setMsisdn', value);
+		},
+		saveDdd({ commit }, value) {
+			commit('setDdd', value);
 		},
 		savePin({ commit }, value) {
 			commit('setPin', value);
@@ -48,6 +53,9 @@ export default {
 		},
 		setMsisdn(state, value) {
 			state.msisdn = value;
+		},
+		setDdd(state, value) {
+			state.ddd = value;
 		},
 		setPin(state, value) {
 			state.pin = value;

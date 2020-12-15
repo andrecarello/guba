@@ -15,6 +15,15 @@
           class="collection:item"
           v-for="(offer, index) in collection.offers"
           :key="index"
+          data-ga-name="Oferta"
+          :data-ga="JSON.stringify({
+            'nome': offer.title,
+            'id': offer.id,
+            'coleção': collection.name,
+            'cliente': offer.company_name,
+            'cluster usuário': cluster,
+            'ddd': ddd
+          })"
         >
           <InterseptedImage
             :source="offer.image_tertiary"
@@ -23,12 +32,16 @@
           />
 
           <div class="collection:body">
-            <h2 class="collection:subtitle">{{ !!offer.subtitle ? offer.subtitle : offer.title }}</h2>
+            <h2 class="collection:subtitle">
+              {{ !!offer.subtitle ? offer.subtitle : offer.title }}
+            </h2>
             <h3 class="collection:company">{{ offer.company_name }}</h3>
             <discount
               class="collection:discount"
               :content="offer.discount"
-              :tenths="!!offer.broke_discount ? offer.broke_discount.tenths : ''"
+              :tenths="
+                !!offer.broke_discount ? offer.broke_discount.tenths : ''
+              "
               :unity="!!offer.broke_discount ? offer.broke_discount.unity : ''"
             />
             <div class="collection:button">Resgatar</div>

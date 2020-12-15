@@ -89,7 +89,7 @@
       :class="isOpenDetailModal ? 'modal:offer:active' : ''"
     />
 
-    <slot v-if="isClient()">
+    <slot v-if="offerPermission(offer.pivot.cluster)">
       <modalCoupon
         v-if="offer.has_code"
         :class="isOpenCouponModal ? 'modal:coupon:active' : ''"

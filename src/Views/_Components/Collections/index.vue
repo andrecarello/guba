@@ -5,6 +5,13 @@
       <router-link
         :to="'/colecao/' + content.id + '/' + slugify(content.name)"
         class="collections:link"
+        data-ga-name="Coleção"
+        :data-ga="JSON.stringify({
+          'nome': content.name,
+          'id': content.id,
+          'cluster usuário': cluster,
+          'ddd': ddd
+        })"
         >Ver tudo</router-link
       >
     </div>
@@ -15,6 +22,15 @@
         :style="'order: ' + offer.cluster"
         v-for="(offer, index) in content.offers"
         :key="index"
+        data-ga-name="Oferta"
+        :data-ga="JSON.stringify({
+          'nome': offer.title,
+          'id': offer.id,
+          'coleção': content.name,
+          'cliente': offer.company_name,
+          'cluster usuário': cluster,
+          'ddd': ddd
+        })"
       >
         <!-- <div class="collections:share"><shareIcon size="20" /></div> -->
         <router-link :to="'/oferta/' + offer.id + '/' + slugify(offer.title)">
@@ -33,7 +49,7 @@
             class="collections:brand"
           />
 
-          <h2 class="collections:subtitle">{{ offer.subtitle }}</h2>
+          <h2 class="collections:subtitle">{{ offer.title ? offer.title : offer.subtitle }}</h2>
           <h3 class="collections:company">{{ offer.company_name }}</h3>
 
           <footer>
