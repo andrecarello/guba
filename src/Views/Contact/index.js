@@ -16,11 +16,12 @@ export default {
 	data() {
 		return {
 			form: {
-				name: 'André Carello',
+				name: 'André',
 				msisdn: _.model('auth').msisdn,
 				email: 'andre@oston.io',
 				message: 'Teste de mensagem'
-			},
+      },
+      sended: false,
 
 			// -> helpers
 			Masks,
@@ -30,7 +31,8 @@ export default {
 		};
 	},
 	mounted() {
-		Settings.title('Fale Conosco');
+    Settings.title('Fale Conosco');
+    // this.$formulate;
 	},
 	components: {
 		btn: LayoutButton,
@@ -48,7 +50,11 @@ export default {
       } else {
         setTimeout(() => {
           this.loading = false;
-          toast('success', 'Seu contato foi enviado com sucesso.')
+          this.sended = true;
+
+          // Object.keys(this.form).map(field => this.form[field] = '');
+
+          // toast('success', 'Seu contato foi enviado com sucesso.')
         }, 2500);
       }
 		}

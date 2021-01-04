@@ -7,13 +7,14 @@
         <strong>OI VANTAGENS</strong>
       </h1>
       <a
+        v-if="!sended"
         href="/offer/goback"
         class="contact:close"
         @click.prevent.stop="$router.go(-1)"
       />
     </div>
 
-    <FormulateForm @submit="submit">
+    <FormulateForm @submit="submit" name="formulate-contact" v-if="!sended">
       <FormulateInput ref="oston" type="hidden" name="oston" value="" />
 
       <FormulateInput
@@ -25,7 +26,7 @@
         v-model="form.name"
         validation="bail|required"
         :validation-messages="{
-          required: 'Campo obrigatório'
+          required: 'Campo obrigatório',
         }"
         error-behavior="blur"
       />
@@ -80,7 +81,7 @@
         :help="`
           ${
             300 - form.message.length >= 0
-              ? 300 - form.message.length + ' de 300.'
+              ? form.message.length + ' de 300.'
               : 'Número máximo de caracteres foi atingido.'
           }
         `"
@@ -96,6 +97,13 @@
         :state="this.loading"
       />
     </FormulateForm>
+
+    <div class="contact:sended" v-else>
+      <div class="contact:container">
+        <p class="contact:text">Seu contato foi enviado com sucesso.</p>
+        <p class="contact:text"><router-link to="/" class="contact:button">Voltar</router-link></p>
+      </div>
+    </div>
   </section>
 </template>
 

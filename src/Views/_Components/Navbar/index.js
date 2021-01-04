@@ -37,7 +37,7 @@ export default {
 				{
 					icon: 'interests',
 					text: 'Meus interesses',
-					url: ''
+					url: 'meus-interesses'
 				},
 				{
 					icon: 'doubts',

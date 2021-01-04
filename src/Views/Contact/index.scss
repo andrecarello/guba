@@ -43,7 +43,13 @@
 			font-weight: bold;
 			@include display(block);
 		}
-	} // -> title
+  } // -> title
+
+  &\:text {
+    font-size: rem(16);
+    line-height: 2;
+    text-align: center;
+  } // -> text
 
 	&\:close {
 		position: absolute;
@@ -71,7 +77,16 @@
 		&:before {
 			transform: translate(-50%, -50%) rotate(-45deg);
 		}
-	} // -> close
+  } // -> close
+
+  &\:container {
+    width: 100%;
+    padding: {
+      top: rem(60);
+      left: rem(20);
+      right: rem(20);
+    }
+  } // -> container
 
 	&\:group {
 		max-width: rem(264);

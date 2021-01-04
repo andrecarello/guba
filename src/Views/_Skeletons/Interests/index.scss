@@ -1,0 +1,37 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_skeletons/collections
+//
+.skeleton {
+	$radius: rem(4);
+	$bg: #eee;
+
+	&\:interests {
+		&-items {
+			@include display(flex);
+			@include wrap(true);
+			padding: {
+				top: rem(30);
+				bottom: rem(20);
+			}
+		} // -> items
+
+		&-item {
+      background-color: $bg;
+      height: rem(45);
+      width: 100%;
+			min-width: rem(78);
+			margin: {
+				top: 0;
+				left: rem(3);
+				right: rem(3);
+				bottom: rem(10);
+			}
+
+			border-radius: $radius;
+		} // -> item
+	} // -> interests
+} // -> skeleton

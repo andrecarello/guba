@@ -27,7 +27,7 @@
   >
     Compre&<strong>Ganhe</strong>
   </p>
-  <p v-else>
+  <p v-else class="discount:default">
     {{ content }}
   </p>
 </template>

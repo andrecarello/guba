@@ -88,6 +88,16 @@ const routes = [
     }
   },
 
+  {
+    path: '/meus-interesses',
+    name: 'Interests',
+    component: ViewController.load('Interests'),
+    meta: {
+      KeepAlive: false,
+      requiresAuth: true
+    }
+  },
+
 	{
 		path: '/auth',
 		name: 'Auth',

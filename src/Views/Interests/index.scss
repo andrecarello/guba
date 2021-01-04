@@ -1,0 +1,130 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/interests
+//
+.interests {
+  padding: {
+    bottom: rem(30);
+  }
+
+	&\:header {
+		@include display(flex, flex-start, center);
+		padding: {
+			left: rem(20);
+			right: rem(20);
+		}
+		height: rem(100);
+	} // -> header
+
+	&\:brand {
+		@include size(42, 40);
+		margin-right: rem(15);
+	} // -> brand
+
+	&\:link {
+		@include size(23, 64);
+		flex: 0 0 rem(64);
+
+		font-size: rem(18);
+		color: var(--black);
+	} // -> link
+
+	&\:title {
+		@include font('Simplon');
+		font-weight: 400;
+		font-size: rem(19);
+		line-height: rem(23);
+		color: var(--black);
+
+		padding-right: rem(15);
+
+		@include grow(true);
+
+		strong {
+			font-weight: bold;
+			@include display(block);
+		}
+	} // -> title
+
+	&\:close {
+		position: absolute;
+		top: rem(20);
+		right: rem(20);
+		z-index: 5;
+		@include circle(32);
+		background-color: var(--white);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			@include size(2, 20);
+			background-color: var(--orange);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	} // -> close
+
+	&\:content {
+		max-width: rem(500);
+		width: 90%;
+		width: 90vw;
+		margin: {
+      top: rem(40);
+			left: auto;
+			right: auto;
+		}
+  } // -> content
+
+  &\:items {
+    @include display(flex, center);
+    @include wrap(true);
+    padding: {
+      top: rem(30);
+      bottom: rem(20);
+    }
+  } // -> items
+
+  &\:item {
+    height: rem(45);
+    width: auto;
+    min-width: rem(78);
+    margin: {
+      top: 0;
+      left: rem(3);
+      right: rem(3);
+      bottom: rem(10);
+    }
+    padding: {
+      left: rem(12);
+      right: rem(12);
+    };
+    @include box-shadow(rem(4) rem(4) rem(10) rgba($black, .16));
+    border-radius: rem(4);
+
+    @include display(flex, center, center);
+    cursor: pointer;
+
+    font-size: rem(12);
+    line-height: 1;
+    color: var(--orange);
+    font-weight: bold;
+
+    &-selected {
+      background-color: var(--orange);
+      color: var(--white);
+    } // -> selected
+  } // -> item
+} // -> terms
