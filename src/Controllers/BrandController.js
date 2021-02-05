@@ -8,7 +8,7 @@ class BrandController extends Controller {
 
 	getAll() {
 		axios
-			.get('http://api.oston.io/oi-ofertas/v1/offers/companies')
+			.get('https://cupomedia.com.br/api/services/1/companies')
 			.then(({ data }) => {
 				this.dispatch(this.model, 'brands', data);
 			})

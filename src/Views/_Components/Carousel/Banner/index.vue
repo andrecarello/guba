@@ -7,27 +7,31 @@
     centerPadding="15px"
     :draggable="true"
     lazyLoad="true"
-    :autoplay="true"
+    :autoplay="false"
     :autoplaySpeed="5000"
+    v-if="this.cluster !== 3"
   >
     <div class="item">
       <img
-        src="https://images.unsplash.com/photo-1509549649946-f1b6276d4f35?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        v-if="this.cluster <= 2 && giftcardDay()"
+        src="@/assets/images/banner/topo-migração.jpg"
         alt=""
+        class="img-click"
+        @click="redirectGiftMigration"
       />
-    </div>
-
-    <div class="item" @click.prevent="e => select(e)">
       <img
-        src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+        v-else-if="this.cluster === 5 && (giftcardDay() || migrationGiftcardDays())"
+        src="@/assets/images/banner/topo-gift.jpg"
         alt=""
+        class="img-click"
+        @click="redirectRedeem"
       />
-    </div>
-
-    <div class="item">
       <img
-        src="https://images.unsplash.com/photo-1511135232973-c3ee80040060?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9"
+        v-else
+        class="img-click"
+        src="@/assets/images/banner/topo-migração-sem-gift.jpg"
         alt=""
+        @click="redirectMigration({ name: 'plans' })"
       />
     </div>
   </carousel>

@@ -10,7 +10,7 @@
 	$prefix: '.slick-';
 
 	&\:home {
-		margin-bottom: rem(83);
+		margin-bottom: rem(30);
 
 		#{$prefix} {
 			&list {
@@ -24,6 +24,7 @@
 						@include display(block);
 						width: 100%;
 						border-radius: rem(8);
+						cursor: pointer;
 					}
 				}
 			}

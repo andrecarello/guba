@@ -29,11 +29,11 @@ export default {
 		return {
 			isOpenMenu: false,
 			items: [
-				{
-					icon: 'coupon',
-					text: 'Meus cupons',
-					url: 'cupons'
-				},
+				// {
+				// 	icon: 'coupon',
+				// 	text: 'Meus cupons',
+				// 	url: 'cupons'
+				// },
 				{
 					icon: 'interests',
 					text: 'Meus interesses',
